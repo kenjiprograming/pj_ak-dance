@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\News;
 use DateTimeImmutable;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Arr;
@@ -11,6 +12,8 @@ use Illuminate\Support\Arr;
  */
 class NewsFactory extends Factory
 {
+    protected $model = News::class;
+
     /**
      * Define the model's default state.
      *
