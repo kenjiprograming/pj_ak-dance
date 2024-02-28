@@ -2,11 +2,8 @@
 
 namespace Database\Seeders;
 
-use DateTimeImmutable;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\News;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\DB;
 
 class NewsTableSeeder extends Seeder
 {
@@ -15,11 +12,6 @@ class NewsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('news')->insert([
-            'status' => 'public',
-            'public_date' => new DateTimeImmutable('now'),
-            'title' => Str::random(10),
-            'body' => Str::random(50),
-        ]);
+        News::factory()->count(10)->create();
     }
 }
