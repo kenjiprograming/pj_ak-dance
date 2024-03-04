@@ -35,6 +35,7 @@ defineProps({
                                 <a href="#" class="bg-slate-500 text-white py-1 px-3 me-6 border rounded-2xl hover:bg-slate-900 transition">非公開</a>
                             </div>
                             <a href="#" class="bg-blue-100 text-blue-900 py-1 px-3 me-6 border hover:bg-blue-900 hover:text-white transition">編集</a>
+                            <a href="#" class="bg-red-100 text-red-900 py-1 px-3 me-6 border hover:bg-red-900 hover:text-white transition">削除</a>
                         </div>
                     </div>
                 </div>
