@@ -38,6 +38,10 @@ Route::get('/newsDetail', function () {
     return Inertia::render('News/Detail');
 })->middleware(['auth', 'verified'])->name('news.detail');
 
+Route::get('/newsCreate', function () {
+    return Inertia::render('News/Detail');
+})->middleware(['auth', 'verified'])->name('news.create');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

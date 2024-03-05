@@ -13,9 +13,9 @@ defineProps({
     <AuthenticatedLayout>
         <template #header>
             <div class="flex justify-between">
-                <div class="text-slate-50 font-semibold text-xl">お知らせ機能</div>
+                <Link :href="route('news')" class="text-slate-50 font-semibold text-xl">お知らせ機能</Link>
                 <div class="text-slate-50 font-semibold text-2xl">お知らせ一覧</div>
-                <a href="#" class="bg-slate-50 py-1 px-3 font-semibold rounded-xl hover:bg-slate-500 hover:text-white transition">新規作成</a>
+                <Link :href="route('news.create')" class="bg-slate-50 py-1 px-3 font-semibold rounded-xl hover:bg-slate-500 hover:text-white transition">新規作成</Link>
             </div>
         </template>
 
