@@ -31,19 +31,19 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/feature', [FeatureController::class, 'index'])
+Route::get('/admin/feature', [FeatureController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('feature');
 
-Route::get('/news', [NewsController::class, 'index'])
+Route::get('/admin/news', [NewsController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('news');
 
-Route::get('/newsDetail', function () {
+Route::get('/admin/newsDetail', function () {
     return Inertia::render('News/Detail');
 })->middleware(['auth', 'verified'])->name('news.detail');
 
-Route::get('/newsCreate', function () {
+Route::get('/admin/newsCreate', function () {
     return Inertia::render('News/Detail');
 })->middleware(['auth', 'verified'])->name('news.create');
 
