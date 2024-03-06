@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use DateTimeImmutable;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -30,7 +31,12 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $data['public_date'] = (new DateTimeImmutable($data['public_date']))->format('Y-m-d H:i:s');
+        $news = News::create($data);
+        return $news
+            ? response()->json($news, 201)
+            : response()->json([], 500);
     }
 
     /**
