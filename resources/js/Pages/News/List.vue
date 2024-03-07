@@ -13,11 +13,16 @@ defineProps({
     <AuthenticatedLayout>
         <template #header>
             <div class="flex justify-between">
-                <Link :href="route('news')" class="text-slate-50 font-semibold text-xl">お知らせ機能</Link>
+                <Link :href="route('news')"
+                    class="text-slate-50 font-semibold text-xl"
+                    >お知らせ機能</Link>
+
                 <div class="text-slate-50 font-semibold text-2xl">お知らせ一覧</div>
+
                 <Link :href="route('news.create')"
                     class="bg-slate-50 py-1 px-3 font-semibold rounded-xl hover:bg-slate-500 hover:text-white transition"
                     >新規作成</Link>
+
             </div>
         </template>
 
@@ -26,15 +31,24 @@ defineProps({
                 <div class="py-2">
                     <div class="max-w-7xl px-8 mx-auto">
                         <div class="flex bg-white py-6 rounded-lg overflow-hidden shadow-lg hover:bg-slate-100 transition">
+
                             <div class="mx-8 py-1">{{ n.public_date }}</div>
-                            <Link :href="route('news.detail')" class="flex-1 py-1 underline">{{ n.title }}</Link>
+
+                            <Link :href="route('news.detail')"
+                                class="flex-1 py-1 underline"
+                                >{{ n.title }}</Link>
+
                             <div v-if="n.status === 'public'" class="flex">
                                 <div class="bg-slate-900 text-white py-1 px-3 me-6 rounded-2xl">公開中</div>
                             </div>
                             <div v-if="n.status === 'private'" class="flex">
                                 <div class="bg-slate-900 text-white py-1 px-3 me-6 rounded-2xl">非公開中</div>
                             </div>
-                            <Link :href="route('news.edit', n)" class="bg-blue-100 text-blue-900 py-1 px-3 me-6 border hover:bg-blue-900 hover:text-white transition">編集</Link>
+
+                            <Link :href="route('news.edit', n)"
+                                class="bg-blue-100 text-blue-900 py-1 px-3 me-6 border hover:bg-blue-900 hover:text-white transition"
+                                >編集</Link>
+
                             <Link :href="route('news.delete', n)" method="delete"
                                 class="bg-red-100 text-red-900 py-1 px-3 me-6 border hover:bg-red-900 hover:text-white transition"
                                 >削除</Link>

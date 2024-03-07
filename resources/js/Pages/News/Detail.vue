@@ -62,8 +62,8 @@ const handleSubmit = () => {
                 <div class="max-w-7xl px-8 mx-auto">
                     <div class="flex bg-white py-6 rounded-lg overflow-hidden shadow-lg hover:bg-slate-100 transition">
                         <div class="px-10 py-1 font-semibold">ステータス：</div>
-                        <div class="flex justify-between">
 
+                        <div class="flex justify-between">
                             <label for="public-button"
                                 :class="status === 'public'
                                     ? 'bg-slate-900 text-white py-1 px-3 me-6 border rounded-2xl transition'
@@ -82,9 +82,10 @@ const handleSubmit = () => {
                                     class="hidden"
                                     /></label>
 
-                             <Link v-if="news" :href="route('news.delete', news)" method="delete"
+                            <Link v-if="news" :href="route('news.delete', news)" method="delete"
                                 class="bg-red-100 text-red-900 py-1 px-3 me-6 border hover:bg-red-900 hover:text-white transition"
                                 >削除</Link>
+
                         </div>
                     </div>
                 </div>
@@ -120,7 +121,9 @@ const handleSubmit = () => {
             <div class="py-2">
                 <div class="max-w-7xl px-8 mx-auto">
                     <div class="flex justify-center bg-white py-6 rounded-lg overflow-hidden shadow-lg hover:bg-slate-100 transition">
-                        <button @click="handleSubmit()" class="bg-blue-100 text-blue-900 py-3 px-5 me-6 border font-semibold hover:bg-blue-900 hover:text-white transition">登録・更新</button>
+                        <button @click="handleSubmit()"
+                            class="bg-blue-100 text-blue-900 py-3 px-5 me-6 border font-semibold hover:bg-blue-900 hover:text-white transition"
+                            >登録・更新</button>
                     </div>
                 </div>
             </div>
