@@ -29,12 +29,10 @@ defineProps({
                             <div class="mx-8 py-1">{{ n.public_date }}</div>
                             <Link :href="route('news.detail')" class="flex-1 py-1 underline">{{ n.title }}</Link>
                             <div v-if="n.status === 'public'" class="flex">
-                                <a href="#" class="bg-slate-500 text-white py-1 px-3 me-6 border rounded-2xl hover:bg-slate-900 transition">公開</a>
-                                <a href="#" class="bg-slate-50 py-1 px-3 me-6 border rounded-2xl hover:bg-slate-900 hover:text-white transition">非公開</a>
+                                <div class="bg-slate-900 text-white py-1 px-3 me-6 rounded-2xl">公開中</div>
                             </div>
                             <div v-if="n.status === 'private'" class="flex">
-                                <a href="#" class="bg-slate-50 py-1 px-3 me-6 border rounded-2xl hover:bg-slate-900 hover:text-white transition">公開</a>
-                                <a href="#" class="bg-slate-500 text-white py-1 px-3 me-6 border rounded-2xl hover:bg-slate-900 transition">非公開</a>
+                                <div class="bg-slate-900 text-white py-1 px-3 me-6 rounded-2xl">非公開中</div>
                             </div>
                             <Link :href="route('news.edit', n)" class="bg-blue-100 text-blue-900 py-1 px-3 me-6 border hover:bg-blue-900 hover:text-white transition">編集</Link>
                             <Link :href="route('news.delete', n)" method="delete"

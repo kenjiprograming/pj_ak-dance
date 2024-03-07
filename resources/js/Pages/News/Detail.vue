@@ -64,15 +64,25 @@ const handleSubmit = () => {
                         <div class="px-10 py-1 font-semibold">ステータス：</div>
                         <div class="flex justify-between">
 
-                            <input id="public-button" type="radio" value="public" v-model="status" class="" />
-                            <label for="public-button">公開</label>
+                            <label for="public-button"
+                                :class="status === 'public'
+                                    ? 'bg-slate-900 text-white py-1 px-3 me-6 border rounded-2xl transition'
+                                    : 'bg-slate-0 py-1 px-3 me-6 border rounded-2xl transition hover:bg-slate-900 hover:text-white'"
+                                >公開
+                                <input id="public-button" type="radio" value="public" v-model="status"
+                                    class="hidden"
+                                    /></label>
 
-                            <input id="private-button" type="radio" value="private" v-model="status" class="" />
-                            <label for="private-button">非公開</label>
+                            <label for="private-button"
+                                :class="status === 'private'
+                                    ? 'bg-slate-900 text-white py-1 px-3 me-6 border rounded-2xl transition'
+                                    : 'bg-slate-0 py-1 px-3 me-6 border rounded-2xl transition hover:bg-slate-900 hover:text-white'"
+                                >非公開
+                                <input id="private-button" type="radio" value="private" v-model="status"
+                                    class="hidden"
+                                    /></label>
 
-                            <a href="#" class="bg-slate-50 py-1 px-3 me-6 border rounded-2xl hover:bg-slate-900 hover:text-white transition">公開</a>
-                            <a href="#" class="bg-slate-500 text-white py-1 px-3 me-6 border rounded-2xl hover:bg-slate-900 transition">非公開</a>
-                            <Link v-if="news" :href="route('news.delete', news)" method="delete"
+                             <Link v-if="news" :href="route('news.delete', news)" method="delete"
                                 class="bg-red-100 text-red-900 py-1 px-3 me-6 border hover:bg-red-900 hover:text-white transition"
                                 >削除</Link>
                         </div>
