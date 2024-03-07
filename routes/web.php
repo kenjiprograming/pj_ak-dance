@@ -39,17 +39,21 @@ Route::get('/admin/news', [NewsController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('news');
 
+Route::get('/admin/news/create', [NewsController::class, 'create'])
+    ->middleware(['auth', 'verified'])
+    ->name('news.create');
+
 Route::get('/admin/news/{news}/edit', [NewsController::class, 'edit'])
     ->middleware(['auth', 'verified'])
     ->name('news.edit');
 
+Route::delete('/news/{news}', [NewsController::class, 'destroy'])
+    ->middleware(['auth', 'verified'])
+    ->name('news.delete');
+
 Route::get('/admin/newsDetail', function () {
     return Inertia::render('News/Detail');
 })->middleware(['auth', 'verified'])->name('news.detail');
-
-Route::get('/admin/newsCreate', function () {
-    return Inertia::render('News/Detail');
-})->middleware(['auth', 'verified'])->name('news.create');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

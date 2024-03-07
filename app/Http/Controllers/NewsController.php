@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use DateTimeImmutable;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -23,7 +24,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('News/Detail', []);
     }
 
     /**
@@ -81,8 +82,9 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(News $news)
+    public function destroy(News $news): RedirectResponse
     {
-        //
+        $news->delete();
+        return redirect()->route('news');
     }
 }

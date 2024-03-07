@@ -8,7 +8,7 @@ const props = defineProps({
     news: Object,
 });
 
-const [rawYear, rawMonth, rawDay] = props.news.public_date.split(" ")[0].split("-");
+const [rawYear, rawMonth, rawDay] = props.news ? props.news.public_date.split(" ")[0].split("-") : ['', '', ''];
 const apiUrl = props.news ? '/api/news/update' : '/api/news'
 
 const status = ref(props.news ? props.news.status : '');
@@ -51,7 +51,9 @@ const handleSubmit = () => {
             <div class="flex justify-between">
                 <Link :href="route('news')" class="text-slate-50 font-semibold text-xl">お知らせ機能</Link>
                 <div class="text-slate-50 font-semibold text-2xl">お知らせ詳細</div>
-                <a href="#" class="bg-slate-50 py-1 px-3 font-semibold rounded-xl hover:bg-slate-500 hover:text-white transition">新規作成</a>
+                <Link :href="route('news.create')"
+                    class="bg-slate-50 py-1 px-3 font-semibold rounded-xl hover:bg-slate-500 hover:text-white transition"
+                    >新規作成</Link>
             </div>
         </template>
 
@@ -70,7 +72,9 @@ const handleSubmit = () => {
 
                             <a href="#" class="bg-slate-50 py-1 px-3 me-6 border rounded-2xl hover:bg-slate-900 hover:text-white transition">公開</a>
                             <a href="#" class="bg-slate-500 text-white py-1 px-3 me-6 border rounded-2xl hover:bg-slate-900 transition">非公開</a>
-                            <a href="#" class="bg-red-100 text-red-900 py-1 px-3 me-6 border hover:bg-red-900 hover:text-white transition">削除</a>
+                            <Link v-if="news" :href="route('news.delete', news)" method="delete"
+                                class="bg-red-100 text-red-900 py-1 px-3 me-6 border hover:bg-red-900 hover:text-white transition"
+                                >削除</Link>
                         </div>
                     </div>
                 </div>
