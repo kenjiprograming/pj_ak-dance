@@ -9,6 +9,7 @@ const props = defineProps({
 });
 
 const [rawYear, rawMonth, rawDay] = props.news.public_date.split(" ")[0].split("-");
+const apiUrl = props.news ? '/api/news/update' : '/api/news'
 
 const status = ref(props.news ? props.news.status : '');
 const year = ref(rawYear);
@@ -23,6 +24,7 @@ const public_date = computed(() => {
 
 const data = computed(() => {
     return {
+        id: props.news ? props.news.id : '',
         status: status.value,
         public_date: public_date.value,
         title: title.value,
@@ -31,7 +33,7 @@ const data = computed(() => {
 });
 
 const handleSubmit = () => {
-    axios.post('/api/news', data.value)
+    axios.post(apiUrl, data.value)
         .then((response) => {
             console.log(response);
         })

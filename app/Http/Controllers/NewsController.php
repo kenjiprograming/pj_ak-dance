@@ -62,7 +62,20 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        //
+        $data = $request->all();
+        $data['public_date'] = (new DateTimeImmutable($data['public_date']))->format('Y-m-d H:i:s');
+
+        $news = News::find($data['id']);
+        $news->status = $data['status'];
+        $news->title = $data['title'];
+        $news->body = $data['body'];
+        $news->public_date = $data['public_date'];
+
+        $news->save();
+
+        return $news
+            ? response()->json($news, 201)
+            : response()->json([], 500);
     }
 
     /**
