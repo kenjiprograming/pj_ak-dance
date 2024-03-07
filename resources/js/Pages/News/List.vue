@@ -34,7 +34,7 @@ defineProps({
 
                             <div class="mx-8 py-1">{{ n.public_date }}</div>
 
-                            <Link :href="route('news.detail')"
+                            <Link :href="route('news.edit', n)"
                                 class="flex-1 py-1 underline"
                                 >{{ n.title }}</Link>
 
