@@ -39,6 +39,10 @@ Route::get('/admin/news', [NewsController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('news');
 
+Route::get('/admin/news/{news}/edit', [NewsController::class, 'edit'])
+    ->middleware(['auth', 'verified'])
+    ->name('news.edit');
+
 Route::get('/admin/newsDetail', function () {
     return Inertia::render('News/Detail');
 })->middleware(['auth', 'verified'])->name('news.detail');

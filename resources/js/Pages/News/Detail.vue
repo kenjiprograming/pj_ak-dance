@@ -4,13 +4,18 @@ import { Head, Link } from '@inertiajs/vue3';
 import { computed, ref } from 'vue';
 import axios from 'axios';
 
+const props = defineProps({
+    news: Object,
+});
 
-const status = ref('');
-const year = ref('');
-const month = ref('');
-const day = ref('');
-const title = ref('');
-const body = ref('');
+const [rawYear, rawMonth, rawDay] = props.news.public_date.split(" ")[0].split("-");
+
+const status = ref(props.news ? props.news.status : '');
+const year = ref(rawYear);
+const month = ref(rawMonth);
+const day = ref(rawDay);
+const title = ref(props.news ? props.news.title : '');
+const body = ref(props.news ? props.news.body : '');
 
 const public_date = computed(() => {
     return year.value + '-' + month.value + '-' + day.value;
@@ -55,10 +60,10 @@ const handleSubmit = () => {
                         <div class="px-10 py-1 font-semibold">ステータス：</div>
                         <div class="flex justify-between">
 
-                            <input id="public-button" type="radio" value="公開" v-model="status" class="" />
+                            <input id="public-button" type="radio" value="public" v-model="status" class="" />
                             <label for="public-button">公開</label>
 
-                            <input id="private-button" type="radio" value="非公開" v-model="status" class="" />
+                            <input id="private-button" type="radio" value="private" v-model="status" class="" />
                             <label for="private-button">非公開</label>
 
                             <a href="#" class="bg-slate-50 py-1 px-3 me-6 border rounded-2xl hover:bg-slate-900 hover:text-white transition">公開</a>
