@@ -27,6 +27,10 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/top', function () {
+    return Inertia::render('Template/Top');
+})->name('top');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
