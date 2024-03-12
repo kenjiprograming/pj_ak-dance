@@ -80,11 +80,8 @@ const toggleHamburger = () => {
         ">
 
         <div class="mainvisual-wrapper">
-            <video autoplay muted playsinline class="sm:hidden">
+            <video autoplay muted playsinline class="">
                 <source src="/media/main-pc.mp4" type="video/mp4" />
-            </video>
-            <video autoplay muted playsinline class="lg:hidden">
-                <source src="/media/main-sp.mp4" type="video/mp4" />
             </video>
         </div>
 
@@ -108,7 +105,7 @@ const toggleHamburger = () => {
                             bg-white
                             border-4
                             border-slate-500
-                            w-40
+                            w-56
                             text-center
                             text-slate-500
                             font-bold
@@ -128,7 +125,7 @@ const toggleHamburger = () => {
                         ">
                         <div class="
                             item
-                            ms-2
+                            ms-1
                             border-s-2
                             ps-2
                             mb-3
@@ -141,7 +138,7 @@ const toggleHamburger = () => {
                         </div>
                         <div class="
                             item
-                            ms-2
+                            ms-1
                             border-s-2
                             ps-2
                             mb-3
@@ -154,7 +151,7 @@ const toggleHamburger = () => {
                         </div>
                         <div class="
                             item
-                            ms-2
+                            ms-1
                             border-s-2
                             ps-2
                             mb-3
@@ -167,7 +164,7 @@ const toggleHamburger = () => {
                         </div>
                         <div class="
                             item
-                            ms-2
+                            ms-1
                             border-s-2
                             ps-2
                             mb-3
@@ -190,7 +187,7 @@ const toggleHamburger = () => {
                             text-slate-500
                             border-2
                             border-slate-500
-                            py-3 px-6
+                            py-3 px-8
                             w-30
                             hover:bg-white
                             ">
@@ -200,67 +197,181 @@ const toggleHamburger = () => {
                 </div>
             </div>
 
-            <div class="career-wrapper" id="career-wrapper">
-                <div class="career-box">
-                    <div class="shindenzu">
-                        <img src="/image/shindenzu-red.png" alt="">
+            <div id="career-wrapper" class="
+                career-wrapper
+                my-20
+                ">
+                <div class="
+                    career-box
+                    flex
+                    ">
+
+                    <div class="
+                        shindenzu
+                        hidden
+                        ">
+                        <img src="/images/shindenzu-red.png" alt="">
                     </div>
-                    <div class="shindenzu-sp">
-                        <img src="/image/shindenzu-red-sp.png" alt="">
+                    <div class="
+                        shindenzu-sp
+                        md:hidden
+                        ">
+                        <img src="/images/shindenzu-red-sp.png" alt="" class="
+                            w-16
+                            ">
                     </div>
-                    <div class="inner">
-                        <div class="heading-outer">
-                            <div class="heading">
-                                <h1>Instructor</h1>
-                                <p class="text">講師</p>
+
+                    <div class="
+                        inner
+                        ">
+                        <div class="
+                            heading-outer
+                            flex
+                            justify-center
+                            ">
+                            <div class="
+                                heading
+                                bg-white
+                                border-4
+                                border-slate-500
+                                w-56
+                                text-center
+                                text-slate-500
+                                font-bold
+                                ">
+                                <h1 class="
+                                    text-3xl
+                                    ">Instructor</h1>
+                                <p class="
+                                    text
+                                    ">講師</p>
                             </div>
                         </div>
-                        <h2 class="pc-h2">AIKA</h2>
-                        <p class="text">
-                            5歳からダンスを始め、今年でダンス歴17年目。（年齢から自動計算）<br class="pc-br"><br class="sp-br">
-                            ヒップホップ、ガールズ、ブレイク、ロック、ジャズ、ハウス、ポップなど、あらゆるダンスジャンルを習得。<br class="pc-br"><br class="sp-br">
-                            EXPG元特待生。EXILEや3代目JSBをはじめ、数々のBIGアーティスト達のバックダンサーを務める。<br class="pc-br"><br class="sp-br">
-                            TV出演やPV出演歴あり。コンテスト等で数々の賞を受賞。<br class="pc-br"><br class="sp-br">
-                            常に学びと共にダンスで生きる為、韓国やアメリカなど各国へダンス留学などもしながら、<br class="pc-br">
+
+                        <h2 class="
+                            pc-h2
+                            my-6
+                            text-center
+                            text-3xl
+                            text-red-600
+                            ">AIKA</h2>
+                        <p class="
+                            text
+                            leading-7
+                            ">
+                            5歳からダンスを始め、今年でダンス歴17年目。（年齢から自動計算）<br class="">
+                            ヒップホップ、ガールズ、ブレイク、ロック、ジャズ、ハウス、ポップなど、あらゆるダンスジャンルを習得。<br class="">
+                            EXPG元特待生。EXILEや3代目JSBをはじめ、数々のBIGアーティスト達のバックダンサーを務める。<br class="">
+                            TV出演やPV出演歴あり。コンテスト等で数々の賞を受賞。<br class="">
+                            常に学びと共にダンスで生きる為、韓国やアメリカなど各国へダンス留学などもしながら、<br class="">
                             日々自分の限界を越える為のスキル向上を努めている。
                         </p>
                     </div>
-                    <div class="shindenzu">
-                        <p></p>
+
+                    <div class="
+                        shindenzu
+                        hidden
+                        ">
+                        <img src="/images/shindenzu-red.png" alt="">
                     </div>
-                    <div class="shindenzu-sp">
-                        <p></p>
+                    <div class="
+                        shindenzu-sp
+                        md:hidden
+                        flex
+                        flex-col
+                        justify-end
+                        ">
+                        <img src="/images/shindenzu-red-sp.png" alt="" class="
+                            w-16
+                            ">
                     </div>
+
                 </div>
             </div>
 
-            <div class="concept-wrapper" id="concept-wrapper">
-                <div class="concept-box">
-                    <div class="shindenzu">
-                        <p></p>
+            <div id="concept-wrapper" class="
+                concept-wrapper
+                my-20
+                ">
+
+                <div class="
+                    concept-box
+                    flex
+                    ">
+
+                    <div class="
+                        shindenzu
+                        hidden
+                        ">
+                        <img src="/images/shindenzu-silver.png" alt="">
                     </div>
-                    <div class="shindenzu-sp">
-                        <p></p>
+                    <div class="
+                        shindenzu-sp
+                        md:hidden
+                        ">
+                        <img src="/images/shindenzu-silver-sp.png" alt="" class="
+                            w-16
+                            ">
                     </div>
+
                     <div class="inner">
-                        <div class="heading-outer">
-                            <div class="heading">
-                                <h1>Concept</h1>
-                                <p class="text">コンセプト</p>
+
+                        <div class="
+                            heading-outer
+                            flex
+                            justify-center
+                            ">
+                            <div class="
+                                heading
+                                bg-white
+                                border-4
+                                border-slate-500
+                                w-56
+                                text-center
+                                text-slate-500
+                                font-bold
+                                ">
+                                <h1 class="
+                                    text-3xl
+                                    ">Concept</h1>
+                                <p class="
+                                    text
+                                    ">コンセプト</p>
                             </div>
                         </div>
-                        <p class="text">
-                            ダンサー<span class="aika">&nbsp;AIKA&nbsp;</span>による<br class="sp-br"><span class="bold">&nbsp;”完全レベル分け制”&nbsp;</span>スクール。<br class="sp-br">一人一人がダンスをしっかり基礎から楽しく学べるスクールです。<br class="pc-br"><br class="sp-br">
-                            そして、ダンスのスキルだけでなくダンサー向けの<br class="sp-br"><span class="bold">&nbsp;”ファッションセンス”&nbsp;</span>や<br class="sp-br"><span class="bold">&nbsp;”ヘアメイク”&nbsp;</span>も学びながら、<br class="sp-br"><br class="pc-br">
+
+                        <p class="
+                            text
+                            my-6
+                            leading-7
+                            ">
+                            ダンサー<span class="aika text-2xl text-red-600">&nbsp;AIKA&nbsp;</span>による<br class="sp-br"><span class="font-bold text-xl text-slate-500">&nbsp;”完全レベル分け制”&nbsp;</span>スクール。<br class="sp-br">
+                            一人一人がダンスをしっかり基礎から楽しく学べるスクールです。<br class="pc-br">
+                            そして、ダンスのスキルだけでなくダンサー向けの<br class="sp-br"><span class="font-bold text-xl text-slate-500">&nbsp;”ファッションセンス”&nbsp;</span>や<br class="sp-br">
+                            <span class="font-bold text-xl text-slate-500">&nbsp;”ヘアメイク”&nbsp;</span>も学びながら、<br class="sp-br">
                             ダンスを生かして一人一人が輝けるようになることがこのスタジオのコンセプトです。
                         </p>
+
                     </div>
-                    <div class="shindenzu">
-                        <img src="/image/shindenzu-silver.png" alt="">
+
+                    <div class="
+                        shindenzu
+                        hidden
+                        ">
+                        <img src="/images/shindenzu-silver.png" alt="">
                     </div>
-                    <div class="shindenzu-sp">
-                        <img src="/image/shindenzu-silver-sp.png" alt="">
+                    <div class="
+                        shindenzu-sp
+                        md:hidden
+                        flex
+                        flex-col
+                        justify-end
+                        ">
+                        <img src="/images/shindenzu-silver-sp.png" alt="" class="
+                            w-16
+                            ">
                     </div>
+
                 </div>
             </div>
 
@@ -275,93 +386,250 @@ const toggleHamburger = () => {
                 </div>
             </div>
 
-            <div class="sns-wrapper">
-                <div class="list">
-                    <div class="item">
+            <div class="
+                sns-wrapper
+                my-20
+                ">
+                <div class="
+                    list
+                    flex
+                    justify-evenly
+                    ">
+                    <div class="
+                        item
+                        ">
                         <a href="https://www.instagram.com/_aika_0121/" target="_blank">
-                            <img src="/image/instagram-icon.svg" alt="">
+                            <img src="/images/instagram-icon.svg" alt="">
                         </a>
                     </div>
-                    <div class="item">
+                    <div class="
+                        item
+                        ">
                         <a href="https://www.tiktok.com/@_aika_0121" target="_blank">
-                            <img src="/image/tiktok-icon.svg" alt="">
+                            <img src="/images/tiktok-icon.svg" alt="">
                         </a>
                     </div>
-                    <div class="item">
+                    <div class="
+                        item
+                        ">
                         <a href="https://www.youtube.com/@user-ih6jd4cf6q" target="_blank">
-                            <img src="/image/youtube-icon.svg" alt="">
+                            <img src="/images/youtube-icon.svg" alt="">
                         </a>
                     </div>
+
+                </div>
+
+            </div>
+
+            <div id="schedule-wrapper" class="
+                schedule-wrapper
+                my-20
+                ">
+                <div class="
+                    inner
+                    flex
+                    flex-col
+                    items-center
+                    ">
+
+                    <div class="
+                        heading-outer
+                        flex
+                        justify-center
+                        ">
+                        <div class="
+                            heading
+                            bg-white
+                            border-4
+                            border-slate-500
+                            w-56
+                            text-center
+                            text-slate-500
+                            font-bold
+                            ">
+                            <h1 class="
+                                text-3xl
+                                ">Schedule</h1>
+                            <p class="
+                                text
+                                ">レッスン日程</p>
+                        </div>
+                    </div>
+
+                    <div class="
+                        my-6
+                        w-11/12
+                        overflow-scroll
+                        block
+                        ">
+                        <img src="/images/schedule-table.svg" alt="" class="
+                            max-w-none
+                        ">
+                    </div>
+
                 </div>
             </div>
 
-            <div class="schedule-wrapper" id="schedule-wrapper">
-                <div class="inner">
-                    <div class="heading-outer">
-                        <div class="heading">
-                            <h1>Schedule</h1>
-                            <p class="text">レッスン日程</p>
-                        </div>
-                    </div>
-                    <div class="table">
-                        <img src="/image/schedule-table.svg" alt="">
-                    </div>
-                </div>
-            </div>
+            <div id="access-wrapper" class="
+                access-wrapper
+                my-20
+                ">
 
-            <div class="access-wrapper" id="access-wrapper">
                 <div class="inner">
-                    <div class="heading-outer">
-                        <div class="heading">
-                            <h1>Access</h1>
-                            <p class="text">アクセス</p>
+
+                    <div class="
+                        heading-outer
+                        flex
+                        justify-center
+                        ">
+                        <div class="
+                            heading
+                            bg-white
+                            border-4
+                            border-slate-500
+                            w-56
+                            text-center
+                            text-slate-500
+                            font-bold
+                            ">
+                            <h1 class="
+                                text-3xl
+                                ">Access</h1>
+                            <p class="
+                                text
+                                ">アクセス</p>
                         </div>
                     </div>
-                    <iframe class="map"
+
+                    <iframe class="
+                        map
+                        my-6
+                        w-full
+                        "
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.810517090736!2d137.762090174159!3d34.73517028136524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ae09e16812de9%3A0xbc6b88d77fda8033!2z6Z-z5qW95aSp5Zu944O75rWc5p2-5biC6YeO5bqXIOmfs-alveOBruiyuOOBl-ODrOODs-OCv-ODq-OCueOCv-OCuOOCqg!5e0!3m2!1sja!2sjp!4v1706926293431!5m2!1sja!2sjp"
                         width="1000" height="562.5" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
-                    <p class="text">
-                        会場：<a class="link" href="#" target="_blank">音楽天国 浜松市野店</a><br>
+
+                    <p class="
+                        text
+                        px-6
+                        ">
+                        会場：<a class="link text-slate-500 underline" href="#" target="_blank">音楽天国 浜松市野店</a><br>
                         住所：〒435-0052 <br><span style="margin-left: 50px;">静岡県浜松市中央区天王町１９８２−３</span>
                     </p>
+
                 </div>
             </div>
 
-            <div class="price-wrapper">
-                <div class="button-outer">
-                    <a href="./price.html"  class="button-large">
-                        <p>レッスン料金はこちら</p>
+            <div class="
+                price-wrapper
+                my-20
+                ">
+                <div class="
+                    button-outer
+                    flex
+                    justify-evenly
+                    ">
+                    <a href="./price.html" class="
+                        button-large
+                        border
+                        border-slate600
+                        px-20
+                        py-5
+                        ">
+                        <p class="
+                            text-slate-600
+                            text-md
+                            font-extrabold
+                            ">レッスン料金はこちら</p>
                     </a>
                 </div>
             </div>
 
-            <div class="contact-wrapper" id="contact-wrapper">
-                <div class="inner">
-                    <div class="heading-outer">
-                        <div class="heading">
-                            <h1>Contact</h1>
-                            <p class="text">お問い合わせ</p>
+            <div id="contact-wrapper" class="
+                contact-wrapper
+                mt-20
+                px-4
+                py-20
+                ">
+
+                <div class="
+                    inner
+                    py-16
+                    border-t
+                    border-b
+                    border-slate-600
+                    ">
+
+                    <div class="
+                        heading-outer
+                        flex
+                        justify-center
+                        ">
+                        <div class="
+                            heading
+                            bg-white
+                            border-4
+                            border-slate-500
+                            w-56
+                            text-center
+                            text-slate-500
+                            font-bold
+                            ">
+                            <h1 class="
+                                text-3xl
+                                ">Contact</h1>
+                            <p class="
+                                text
+                                ">お問い合わせ</p>
                         </div>
                     </div>
-                    <p class="text">
+
+                    <p class="
+                        text
+                        my-6
+                        text-center
+                        px-6
+                        ">
                         お問い合わせやお依頼は、お気軽に以下の公式ラインよりご連絡ください。<br>
                         1週間以内に返信いたします。
                     </p>
-                    <a href="#" target="_blank" class="line-icon">
-                        <img src="/image/line-icon.svg" alt="">
+
+                    <a href="#" target="_blank" class="
+                        line-icon
+                        flex
+                        justify-center
+                        ">
+                        <img src="/images/line-icon.svg" alt="">
                     </a>
+
                 </div>
             </div>
+
         </div>
     </div>
 
 
-    <footer>
-        <div class="footer-bg">
-            <p>copyright@ak-dance</p>
+    <footer class="
+        ">
+
+        <div class="
+            footer-bg
+            h-16
+            bg-black
+            border-t-2
+            border-slate-600
+            flex
+            flex-col
+            justify-center
+            items-center
+            ">
+            <p class="
+                text-white
+                ">copyright@ak-dance</p>
         </div>
+
     </footer>
 
 </template>
