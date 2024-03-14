@@ -19,6 +19,14 @@ class NewsController extends Controller
         return Inertia::render('News/List', ['news' => $news]);
     }
 
+    public function all()
+    {
+        $news = News::all();
+        return $news
+            ? response()->json($news, 201)
+            : response()->json([], 500);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -3,8 +3,18 @@ import { computed, ref } from 'vue';
 import { Head, Link } from '@inertiajs/vue3';
 import Header from './Header.vue';
 import Footer from './Footer.vue';
+import axios from 'axios';
 
 let news = ref('')
+
+axios.get('/api/news')
+    .then((response) => {
+        console.log(response.data);
+        news.value = response.data;
+    })
+    .catch((error) => {
+        console.log(error);
+    })
 
 </script>
 
@@ -40,6 +50,7 @@ let news = ref('')
                                 heading-outer
                                 flex
                                 justify-center
+                                mb-6
                                 ">
                                 <div class="
                                     heading
@@ -65,7 +76,7 @@ let news = ref('')
                                 py-2
                                 ">
 
-                                <div class="
+                                <div v-for="n in news" class="
                                     item
                                     ms-1
                                     border-s-2
@@ -73,80 +84,16 @@ let news = ref('')
                                     ps-2
                                     mb-3
                                     ">
-                                    <p class="
-                                        date
-                                        mb-1
-                                        ">2024.01.10</p>
-                                    <Link :href="route('news.detail', 1)" class="
-                                        text
-                                        underline
-                                        ">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</Link>
-                                </div>
-
-                                <div class="
-                                    item
-                                    ms-1
-                                    border-s-2
-                                    ps-2
-                                    mb-3
-                                    ">
-                                    <p class="
-                                        date
-                                        mb-1
-                                        ">2024.01.10</p>
-                                    <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                                </div>
-                                <div class="
-                                    item
-                                    ms-1
-                                    border-s-2
-                                    ps-2
-                                    mb-3
-                                    ">
-                                    <p class="
-                                        date
-                                        mb-1
-                                        ">2024.01.10</p>
-                                    <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                                </div>
-                                <div class="
-                                    item
-                                    ms-1
-                                    border-s-2
-                                    ps-2
-                                    mb-3
-                                    ">
-                                    <p class="
-                                        date
-                                        mb-1
-                                        ">2024.01.10</p>
-                                    <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                                </div>
-                                <div class="
-                                    item
-                                    ms-1
-                                    border-s-2
-                                    ps-2
-                                    mb-3
-                                    ">
-                                    <p class="
-                                        date
-                                        mb-1
-                                        ">2024.01.10</p>
-                                    <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                                </div>
-                                <div class="
-                                    item
-                                    ms-1
-                                    border-s-2
-                                    ps-2
-                                    mb-3
-                                    ">
-                                    <p class="
-                                        date
-                                        mb-1
-                                        ">2024.01.10</p>
-                                    <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                                    <div v-if="n.status === 'public'">
+                                        <p class="
+                                            date
+                                            mb-1
+                                            ">{{ n.public_date }}</p>
+                                        <Link :href="route('news.detail', n)" class="
+                                            text
+                                            underline
+                                            ">{{ n.title }}</Link>
+                                    </div>
                                 </div>
 
                             </div>
