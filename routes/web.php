@@ -31,6 +31,10 @@ Route::get('/top', function () {
     return Inertia::render('Template/Top');
 })->name('top');
 
+Route::get('/news', function () {
+    return Inertia::render('Template/NewsList');
+})->name('news.list');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

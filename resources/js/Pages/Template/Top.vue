@@ -1,5 +1,6 @@
 <script setup>
 import { computed, ref } from 'vue';
+import { Head, Link } from '@inertiajs/vue3';
 import Header from './Header.vue';
 import Footer from './Footer.vue';
 
@@ -121,7 +122,7 @@ let news = ref('')
                         flex
                         justify-center
                         ">
-                        <a href="./news.html" class="
+                        <Link :href="route('news.list')" class="
                             button-medium
                             text-slate-500
                             border-2
@@ -131,7 +132,7 @@ let news = ref('')
                             hover:bg-white
                             ">
                             <p>一覧はこちら</p>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
