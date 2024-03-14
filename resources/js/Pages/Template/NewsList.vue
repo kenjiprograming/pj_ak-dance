@@ -1,5 +1,6 @@
 <script setup>
 import { computed, ref } from 'vue';
+import { Head, Link } from '@inertiajs/vue3';
 import Header from './Header.vue';
 import Footer from './Footer.vue';
 
@@ -15,12 +16,16 @@ let news = ref('')
     <div class="
         main-wrapper
         bg-black
-        text-white
+        text-slate-500
         ">
 
         <div class="contents-wrapper">
 
-            <div id="news-under-wrapper" class="news-under-wrapper">
+            <div id="news-under-wrapper" class="
+                news-under-wrapper
+                py-10
+                ">
+
                 <div class="inner">
 
                     <div id="news-wrapper" class="
@@ -64,6 +69,7 @@ let news = ref('')
                                     item
                                     ms-1
                                     border-s-2
+                                    border-slate-500
                                     ps-2
                                     mb-3
                                     ">
@@ -71,7 +77,10 @@ let news = ref('')
                                         date
                                         mb-1
                                         ">2024.01.10</p>
-                                    <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                                    <Link :href="route('news.detail', 1)" class="
+                                        text
+                                        underline
+                                        ">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</Link>
                                 </div>
 
                                 <div class="
