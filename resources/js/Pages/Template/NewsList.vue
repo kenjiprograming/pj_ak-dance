@@ -25,6 +25,7 @@ axios.get('/api/news')
 
     <div class="
         main-wrapper
+        h-screen
         bg-black
         text-slate-500
         ">

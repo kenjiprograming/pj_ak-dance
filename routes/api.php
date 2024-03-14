@@ -23,3 +23,4 @@ Route::post('/news', [NewsController::class, 'store']);
 Route::post('/news/update', [NewsController::class, 'update']);
 
 Route::get('/news', [NewsController::class, 'all']);
+Route::get('/news/{id}', [NewsController::class, 'one']);

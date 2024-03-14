@@ -3,9 +3,17 @@ import { computed, ref } from 'vue';
 import { Head, Link } from '@inertiajs/vue3';
 import Header from './Header.vue';
 import Footer from './Footer.vue';
+import axios from 'axios';
 
 let news = ref('')
 
+axios.get('/api/news/', news.id)
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((error) => {
+        console.log(error);
+    })
 </script>
 
 <template>

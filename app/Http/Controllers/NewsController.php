@@ -27,6 +27,15 @@ class NewsController extends Controller
             : response()->json([], 500);
     }
 
+    public function one($id)
+    {
+        return response()->json($id);
+        // $news = News::all();
+        // return $news
+        //     ? response()->json($news, 201)
+        //     : response()->json([], 500);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

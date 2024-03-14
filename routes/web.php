@@ -65,7 +65,7 @@ Route::delete('/news/{news}', [NewsController::class, 'destroy'])
 
 Route::get('/admin/newsDetail', function () {
     return Inertia::render('News/Detail');
-})->middleware(['auth', 'verified'])->name('news.detail');
+})->middleware(['auth', 'verified'])->name('admin.news.detail');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
