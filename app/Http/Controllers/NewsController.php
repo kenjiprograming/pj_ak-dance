@@ -61,7 +61,7 @@ class NewsController extends Controller
             'status' => 'required',
             'title' => 'required|string|max:255',
             'body' => 'required|string|max:1000',
-            'public_date' => 'required',
+            'public_date' => 'required|string',
         ]);
         News::create([
             'status' => $request->status,

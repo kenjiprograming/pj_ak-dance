@@ -14,8 +14,10 @@ const form = useForm({
     status: props.news.status,
     title: props.news.title,
     body: props.news.slug,
-    public_date: props.news.content,
+    public_date: new Date(props.news.public_date),
 });
+
+const masks = ref({ modelValue: 'YYYY-MM-DD' });
 
 const submit = () => {
     form.post(route("news.store"));
@@ -84,7 +86,10 @@ const submit = () => {
                                 <div v-if="form.errors.public_date" class="text-sm text-red-600">
                                     {{ form.errors.public_date }}
                                 </div>
-                                <input type="text" class="me-4" placeholder="2002-01-21" v-model="form.public_date"></input>
+                                <div>
+                                    <VDatePicker v-model.string="form.public_date" mode="date" :masks="masks"/>
+                                </div>
+                                <input type="hidden" class="me-4" placeholder="2002-01-21" v-model="form.public_date" />
                             </div>
                         </div>
                     </div>

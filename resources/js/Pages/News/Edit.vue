@@ -15,8 +15,10 @@ const form = useForm({
     status: props.news.status,
     title: props.news.title,
     body: props.news.body,
-    public_date: props.news.public_date,
+    public_date: new Date(props.news.public_date).toLocaleDateString('sv-SE'),
 });
+
+const masks = ref({ modelValue: 'YYYY-MM-DD' });
 
 const submit = () => {
     form.put(route("news.update", props.news.id));
@@ -78,11 +80,14 @@ const submit = () => {
                     <div class="max-w-7xl px-8 mx-auto">
                         <div class="flex bg-white py-6 rounded-lg overflow-hidden shadow-lg hover:bg-slate-100 transition">
                             <div class="px-10 py-2 font-semibold">公開日時：</div>
-                            <div class="flex justify-between">
+                            <div class="flex flex-col">
                                 <div v-if="form.errors.public_date" class="text-sm text-red-600">
                                     {{ form.errors.public_date }}
                                 </div>
-                                <input type="text" class="me-4" placeholder="2002-01-21" v-model="form.public_date" />
+                                <div>
+                                    <VDatePicker v-model.string="form.public_date" mode="date" :masks="masks"/>
+                                    <input type="hidden" class="me-4" placeholder="2002-01-21" v-model="form.public_date" />
+                                </div>
                             </div>
                         </div>
                     </div>
