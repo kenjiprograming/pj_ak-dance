@@ -1,6 +1,8 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link, usePage } from '@inertiajs/vue3';
+
+const page = usePage()
 
 defineProps({
     news: Array,
@@ -13,7 +15,7 @@ defineProps({
     <AuthenticatedLayout>
         <template #header>
             <div class="flex justify-between">
-                <Link :href="route('news')"
+                <Link :href="route('news.index')"
                     class="text-slate-50 font-semibold text-xl"
                     >お知らせ機能</Link>
 
@@ -25,6 +27,14 @@ defineProps({
 
             </div>
         </template>
+
+        <div v-if="page.props.flash.message"
+            class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
+            role="alert">
+            <span class="font-medium">
+                {{ page.props.flash.message }}
+            </span>
+        </div>
 
         <div v-if="news" class="max-w-7xl my-10 mx-auto py-10 rounded-2xl bg-slate-300">
             <div v-for="n in news" :key="n.id" class="">
@@ -49,7 +59,7 @@ defineProps({
                                 class="bg-blue-100 text-blue-900 py-1 px-3 me-6 border hover:bg-blue-900 hover:text-white transition"
                                 >編集</Link>
 
-                            <Link :href="route('news.delete', n)" method="delete"
+                            <Link :href="route('news.destroy', n)" method="delete"
                                 class="bg-red-100 text-red-900 py-1 px-3 me-6 border hover:bg-red-900 hover:text-white transition"
                                 >削除</Link>
                         </div>

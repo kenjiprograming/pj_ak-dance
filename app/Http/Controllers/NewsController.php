@@ -16,7 +16,12 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::all();
-        return Inertia::render('News/List', ['news' => $news]);
+        return Inertia::render(
+            'News/Index',
+            [
+                'news' => $news,
+            ]
+        );
     }
 
     public function all()
@@ -41,7 +46,10 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return Inertia::render('News/Detail', []);
+        return Inertia::render(
+            'News/Create',
+            []
+        );
     }
 
     /**
@@ -49,12 +57,21 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $data['public_date'] = (new DateTimeImmutable($data['public_date']))->format('Y-m-d H:i:s');
-        $news = News::create($data);
-        return $news
-            ? response()->json($news, 201)
-            : response()->json([], 500);
+        $request->validate([
+            'status' => 'required',
+            'title' => 'required|string|max:255',
+            'body' => 'required|string|max:1000',
+            'public_date' => 'required',
+        ]);
+        News::create([
+            'status' => $request->status,
+            'title' => $request->title,
+            'body' => $request->body,
+            'public_date' => (new DateTimeImmutable($request->public_date))->format('Y-m-d'),
+        ]);
+        sleep(1);
+
+        return redirect()->route('news.index')->with('message', 'News Created Successfully');
     }
 
     /**
@@ -70,9 +87,12 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        return Inertia::render('News/Detail', [
-            'news' => $news,
-        ]);
+        return Inertia::render(
+            'News/Edit',
+            [
+                'news' => $news,
+            ]
+        );
     }
 
     /**
@@ -80,20 +100,15 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        $data = $request->all();
-        $data['public_date'] = (new DateTimeImmutable($data['public_date']))->format('Y-m-d H:i:s');
-
-        $news = News::find($data['id']);
-        $news->status = $data['status'];
-        $news->title = $data['title'];
-        $news->body = $data['body'];
-        $news->public_date = $data['public_date'];
-
+        $news->id = $request->id;
+        $news->status = $request->status;
+        $news->title = $request->title;
+        $news->body = $request->body;
+        $news->public_date = (new DateTimeImmutable($request->public_date))->format('Y-m-d');
         $news->save();
+        sleep(1);
 
-        return $news
-            ? response()->json($news, 201)
-            : response()->json([], 500);
+        return redirect()->route('news.index')->with('message', 'News Updated Successfully');
     }
 
     /**
@@ -102,6 +117,8 @@ class NewsController extends Controller
     public function destroy(News $news): RedirectResponse
     {
         $news->delete();
-        return redirect()->route('news');
+        sleep(1);
+
+        return redirect()->route('news.index')->with('message', 'News Delete Successfully');
     }
 }
