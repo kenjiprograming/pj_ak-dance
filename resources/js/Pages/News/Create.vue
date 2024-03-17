@@ -107,7 +107,7 @@ const submit = () => {
                 <div class="py-2">
                     <div class="max-w-7xl px-8 mx-auto">
                         <div class="flex bg-white py-6 rounded-lg h-96 overflow-hidden shadow-lg hover:bg-slate-100 transition">
-                            <div class="px-10 py-2 font-semibold">内容：</div>
+                            <div class="px-10 py-2 font-semibold">本文：</div>
                             <div class="flex flex-col">
                                 <div v-if="form.errors.body" class="text-sm text-red-600">
                                     {{ form.errors.body }}
