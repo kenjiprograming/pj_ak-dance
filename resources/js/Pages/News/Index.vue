@@ -29,7 +29,7 @@ defineProps({
         </template>
 
         <div v-if="page.props.flash.message"
-            class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
+            class="max-w-lg mt-8 mx-auto py-4 text-center rounded-2xl text-green-700 bg-green-100"
             role="alert">
             <span class="font-medium">
                 {{ page.props.flash.message }}
@@ -42,17 +42,17 @@ defineProps({
                     <div class="max-w-7xl px-8 mx-auto">
                         <div class="flex bg-white py-6 rounded-lg overflow-hidden shadow-lg hover:bg-slate-100 transition">
 
-                            <div class="mx-8 py-1">{{ n.public_date }}</div>
+                            <div class="mx-8 py-1">{{ new Date(n.public_date).toLocaleDateString('sv-SE') }}</div>
 
                             <Link :href="route('news.edit', n)"
                                 class="flex-1 py-1 underline"
                                 >{{ n.title }}</Link>
 
                             <div v-if="n.status === 'public'" class="flex">
-                                <div class="bg-slate-900 text-white py-1 px-3 me-6 rounded-2xl">公開中</div>
+                                <div class="bg-slate-900 text-white py-1 px-3 me-6 rounded-2xl">公開</div>
                             </div>
                             <div v-if="n.status === 'private'" class="flex">
-                                <div class="bg-slate-900 text-white py-1 px-3 me-6 rounded-2xl">非公開中</div>
+                                <div class="bg-slate-900 text-white py-1 px-3 me-6 rounded-2xl">非公開</div>
                             </div>
 
                             <Link :href="route('news.edit', n)"

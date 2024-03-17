@@ -129,6 +129,9 @@ const submit = () => {
                             <button class="
                                 bg-blue-100 text-blue-900 py-3 px-5 me-6 border font-semibold hover:bg-blue-900 hover:text-white transition
                                 ">登録・更新</button>
+                            <Link :href="route('news.index')" class="
+                                bg-slate-100 text-slate-900 py-3 px-4 me-6 border font-semibold hover:bg-slate-900 hover:text-slate-100 transition
+                                ">戻る</Link>
                         </div>
                     </div>
                 </div>
