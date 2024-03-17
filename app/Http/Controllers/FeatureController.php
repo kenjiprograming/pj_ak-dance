@@ -12,6 +12,6 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Feature', []);
+        return Inertia::render('Feature/Index', []);
     }
 }
