@@ -46,7 +46,7 @@ const era = getEra()
     <div class="
         main-wrapper
         bg-black
-        text-white
+        text-slate-500
         ">
 
         <div class="mainvisual-wrapper">
@@ -93,24 +93,27 @@ const era = getEra()
                         </div>
                     </div>
 
-                    <div v-if="news" class="
+                    <div class="
                         list
                         py-2
                         ">
+
                         <div v-for="n in news"  class="
                             item
                             ms-1
                             border-s-2
+                            border-slate-500
                             ps-2
-                            mb-3
+                            mb-4
                             ">
                             <div v-if="n.status === 'public'">
                                 <p class="
                                     date
-                                    mb-1
                                     ">{{ new Date(n.public_date).toLocaleDateString('sv-SE') }}</p>
                                 <Link :href="route('news.detail', n)" class="
                                     text
+                                    text-lg
+                                    font-semibold
                                     underline
                                     ">{{ n.title }}</Link>
                             </div>
@@ -197,7 +200,9 @@ const era = getEra()
                             ">AIKA</h2>
                         <p class="
                             text
+                            text-md
                             leading-7
+                            text-white
                             ">
                             5歳からダンスを始め、今年でダンス歴{{era}}年目。<br class="">
                             ヒップホップ、ガールズ、ブレイク、ロック、ジャズ、ハウス、ポップなど、あらゆるダンスジャンルを習得。<br class="">
@@ -284,6 +289,7 @@ const era = getEra()
                             text
                             my-6
                             leading-7
+                            text-white
                             ">
                             ダンサー<span class="aika text-2xl text-red-600">&nbsp;AIKA&nbsp;</span>による<br class="sp-br"><span class="font-bold text-xl text-slate-500">&nbsp;”完全レベル分け制”&nbsp;</span>スクール。<br class="sp-br">
                             一人一人がダンスをしっかり基礎から楽しく学べるスクールです。<br class="pc-br">
@@ -328,7 +334,7 @@ const era = getEra()
 
             <div class="
                 sns-wrapper
-                my-20
+                my-40
                 ">
                 <div class="
                     list
@@ -453,6 +459,7 @@ const era = getEra()
 
                     <p class="
                         text
+                        text-white
                         px-6
                         ">
                         会場：<a class="link text-slate-500 underline" href="#" target="_blank">音楽天国 浜松市野店</a><br>
@@ -464,7 +471,7 @@ const era = getEra()
 
             <div class="
                 price-wrapper
-                my-20
+                my-40
                 ">
                 <div class="
                     button-outer
@@ -473,9 +480,9 @@ const era = getEra()
                     ">
                     <a href="./price.html" class="
                         button-large
-                        border
-                        border-slate600
-                        px-20
+                        border-slate-600
+                        border-2
+                        px-16
                         py-5
                         ">
                         <p class="
@@ -491,7 +498,7 @@ const era = getEra()
                 contact-wrapper
                 mt-20
                 px-4
-                py-20
+                pb-40
                 ">
 
                 <div class="
@@ -528,9 +535,10 @@ const era = getEra()
 
                     <p class="
                         text
+                        text-white
                         my-6
-                        text-center
                         px-6
+                        text-center
                         ">
                         お問い合わせやお依頼は、お気軽に以下の公式ラインよりご連絡ください。<br>
                         1週間以内に返信いたします。

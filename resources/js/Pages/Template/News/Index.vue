@@ -74,15 +74,16 @@ defineProps({
                                     border-s-2
                                     border-slate-500
                                     ps-2
-                                    mb-3
+                                    mb-4
                                     ">
                                     <div v-if="n.status === 'public'">
                                         <p class="
                                             date
-                                            mb-1
                                             ">{{ new Date(n.public_date).toLocaleDateString('sv-SE') }}</p>
                                         <Link :href="route('news.detail', n)" class="
                                             text
+                                            text-lg
+                                            font-semibold
                                             underline
                                             ">{{ n.title }}</Link>
                                     </div>
