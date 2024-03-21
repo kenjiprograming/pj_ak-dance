@@ -4,7 +4,37 @@ import { Head, Link } from '@inertiajs/vue3';
 import Header from './Header.vue';
 import Footer from './Footer.vue';
 
-let news = ref('')
+defineProps({
+    news: Array,
+})
+
+const getEra = () => {
+    // 誕生日を設定します（YYYY-MM-DD形式で設定します）
+    var birthday = '2007-01-21';
+
+    // 誕生日の年月日を取得します
+    var birthDate = new Date(birthday);
+    var birthYear = birthDate.getFullYear();
+    var birthMonth = birthDate.getMonth();
+    var birthDay = birthDate.getDate();
+
+    // 今日の日付を取得します
+    var today = new Date();
+    var currentYear = today.getFullYear();
+    var currentMonth = today.getMonth();
+    var currentDay = today.getDate();
+
+    // 年齢を計算します
+    var age = currentYear - birthYear;
+    // 誕生日が今年より後ならば、1年引きます
+    if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDay < birthDay)) {
+        age--;
+    }
+
+    return age;
+}
+
+const era = getEra()
 
 </script>
 
@@ -59,61 +89,27 @@ let news = ref('')
                         </div>
                     </div>
 
-                    <div class="
+                    <div v-if="news" class="
                         list
                         py-2
                         ">
-                        <div class="
+                        <div v-for="n in news"  class="
                             item
                             ms-1
                             border-s-2
                             ps-2
                             mb-3
                             ">
-                            <p class="
-                                date
-                                mb-1
-                                ">2024.01.10</p>
-                            <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                        </div>
-                        <div class="
-                            item
-                            ms-1
-                            border-s-2
-                            ps-2
-                            mb-3
-                            ">
-                            <p class="
-                                date
-                                mb-1
-                                ">2024.01.10</p>
-                            <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                        </div>
-                        <div class="
-                            item
-                            ms-1
-                            border-s-2
-                            ps-2
-                            mb-3
-                            ">
-                            <p class="
-                                date
-                                mb-1
-                                ">2024.01.10</p>
-                            <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                        </div>
-                        <div class="
-                            item
-                            ms-1
-                            border-s-2
-                            ps-2
-                            mb-3
-                            ">
-                            <p class="
-                                date
-                                mb-1
-                                ">2024.01.10</p>
-                            <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                            <div v-if="n.status === 'public'">
+                                <p class="
+                                    date
+                                    mb-1
+                                    ">{{ new Date(n.public_date).toLocaleDateString('sv-SE') }}</p>
+                                <Link :href="route('news.detail', n)" class="
+                                    text
+                                    underline
+                                    ">{{ n.title }}</Link>
+                            </div>
                         </div>
                     </div>
 
@@ -199,7 +195,7 @@ let news = ref('')
                             text
                             leading-7
                             ">
-                            5歳からダンスを始め、今年でダンス歴17年目。（年齢から自動計算）<br class="">
+                            5歳からダンスを始め、今年でダンス歴{{era}}年目。<br class="">
                             ヒップホップ、ガールズ、ブレイク、ロック、ジャズ、ハウス、ポップなど、あらゆるダンスジャンルを習得。<br class="">
                             EXPG元特待生。EXILEや3代目JSBをはじめ、数々のBIGアーティスト達のバックダンサーを務める。<br class="">
                             TV出演やPV出演歴あり。コンテスト等で数々の賞を受賞。<br class="">
