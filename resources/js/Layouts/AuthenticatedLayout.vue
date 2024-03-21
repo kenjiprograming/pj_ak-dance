@@ -20,7 +20,7 @@ const showingNavigationDropdown = ref(false);
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('feature.index')">
+                                <Link :href="route('admin.feature.index')">
                                     <img :src="'/images/icon.svg'" alt="" class="
                                         max-sm:hidden
                                         ">
@@ -32,7 +32,7 @@ const showingNavigationDropdown = ref(false);
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('feature.index')" :active="route().current('feature')">
+                                <NavLink :href="route('admin.feature.index')">
                                     機能一覧
                                 </NavLink>
                             </div>

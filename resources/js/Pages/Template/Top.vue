@@ -122,7 +122,7 @@ let news = ref('')
                         flex
                         justify-center
                         ">
-                        <Link :href="route('news.list')" class="
+                        <Link :href="route('news.index')" class="
                             button-medium
                             text-slate-500
                             border-2

@@ -17,7 +17,7 @@ import { Head, Link } from '@inertiajs/vue3';
             <div class="py-2">
                 <div class="max-w-xl px-8 mx-auto">
                     <div class="bg-white py-6 rounded-lg overflow-hidden shadow-lg transition hover:bg-slate-100">
-                        <Link :href="route('news.index')" class="block font-semibold text-center">お知らせ機能</Link>
+                        <Link :href="route('admin.news.index')" class="block font-semibold text-center">お知らせ機能</Link>
                     </div>
                 </div>
             </div>

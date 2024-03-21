@@ -19,36 +19,32 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
-
-Route::get('/top', function () {
     return Inertia::render('Template/Top');
 })->name('top');
 
 Route::get('/news', function () {
-    return Inertia::render('Template/NewsList');
-})->name('news.list');
+    return Inertia::render('Template/News/Index');
+})->name('news.index');
 
 Route::get('/news/{news}', function () {
-    return Inertia::render('Template/NewsDetail');
+    return Inertia::render('Template/News/Detail');
 })->name('news.detail');
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/admin/feature', [FeatureController::class, 'index'])
     ->middleware(['auth', 'verified'])
-    ->name('feature.index');
+    ->name('admin.feature.index');
 
 Route::resource('/admin/news', NewsController::class)
-    ->middleware(['auth', 'verified']);
+    ->middleware(['auth', 'verified'])
+    ->names([
+        'index' => 'admin.news.index',
+        'create' => 'admin.news.create',
+        'store' => 'admin.news.store',
+        'show' => 'admin.news.show',
+        'edit' => 'admin.news.edit',
+        'update' => 'admin.news.update',
+        'destroy' => 'admin.news.destroy',
+    ]);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
