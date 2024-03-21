@@ -115,7 +115,7 @@ const submit = () => {
                                 <div v-if="form.errors.body" class="text-sm text-red-600">
                                     {{ form.errors.body }}
                                 </div>
-                                <textarea class="h-full w-96" placeholder="## 小見出し１" v-model="form.body"></textarea>
+                                <textarea class="h-full w-96" placeholder="# 見出し１&#13;&#13;## 見出し２&#13;&#13;### 見出し３&#13;&#13;**太字**&#13;&#13;*イタリック*&#13;&#13;通常" v-model="form.body"></textarea>
                             </div>
                         </div>
                     </div>

@@ -71,7 +71,7 @@ class NewsController extends Controller
         ]);
         sleep(1);
 
-        return redirect()->route('news.index')->with('message', 'News Created Successfully');
+        return redirect()->route('admin.news.index')->with('message', 'News Created Successfully');
     }
 
     /**
@@ -108,7 +108,7 @@ class NewsController extends Controller
         $news->save();
         sleep(1);
 
-        return redirect()->route('news.index')->with('message', 'News Updated Successfully');
+        return redirect()->route('admin.news.index')->with('message', 'News Updated Successfully');
     }
 
     /**
@@ -119,6 +119,6 @@ class NewsController extends Controller
         $news->delete();
         sleep(1);
 
-        return redirect()->route('news.index')->with('message', 'News Delete Successfully');
+        return redirect()->route('admin.news.index')->with('message', 'News Delete Successfully');
     }
 }

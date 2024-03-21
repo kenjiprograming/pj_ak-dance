@@ -1,11 +1,29 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
+import { marked } from 'marked';
 import Header from '../Header.vue';
 import Footer from '../Footer.vue';
 
 defineProps({
     news: Object,
 })
+
+const renderer = new marked.Renderer()
+const originalHeading = renderer.heading.bind(renderer)
+renderer.heading = (text, level, raw, slugger) => {
+    console.log(level);
+    let mapping = {
+        1: 'text-3xl mt-4',
+        2: 'text-2xl mt-2',
+        3: 'text-xl mt-1',
+    }
+    if (level !== null) {
+        return `<h${level} class="${mapping[level]} font-bold">${text}</h${level}>\n`
+    } else {
+        return originalHeading(text, level, raw, slugger)
+    }
+}
+marked.setOptions({ renderer })
 
 </script>
 
@@ -44,7 +62,7 @@ defineProps({
                             heading
                             ">
                             <h1 class="
-                                text-3xl
+                                text-4xl
                                 font-extrabold
                                 ">{{ news.title }}</h1>
                         </div>
@@ -68,21 +86,9 @@ defineProps({
                             mb-8
                             ">
 
-                            <div class="
-                                heading
-                                text-2xl
-                                mb-3
-                                ">
-                                <h2>小見出し１</h2>
-                            </div>
-
-                            <div class="
-                                content
-                                ">
-                                <p class="
-                                    text
-                                    ">{{ news.body }}</p>
-                            </div>
+                            <div v-html="marked.parse(news.body)" class="
+                                text
+                                "></div>
                         </div>
 
                     </div>
