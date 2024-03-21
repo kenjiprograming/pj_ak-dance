@@ -55,7 +55,10 @@ const era = getEra()
             </video>
         </div>
 
-        <div class="contents-wrapper">
+        <div class="
+            contents-wrapper
+            mt-10
+            ">
 
             <div id="news-wrapper" class="
                 news-wrapper
@@ -79,6 +82,7 @@ const era = getEra()
                             text-center
                             text-slate-500
                             font-bold
+                            mb-4
                             ">
                             <h1 class="
                                 text-3xl

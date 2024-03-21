@@ -22,4 +22,25 @@ class TopController extends Controller
             ]
         );
     }
+
+    public function news()
+    {
+        $news = News::all();
+        return Inertia::render(
+            'Template/News/Index',
+            [
+                'news' => $news,
+            ]
+        );
+    }
+
+    public function newsDetail(News $news)
+    {
+        return Inertia::render(
+            'Template/News/Detail',
+            [
+                'news' => $news,
+            ]
+        );
+    }
 }

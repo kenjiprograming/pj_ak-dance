@@ -1,8 +1,7 @@
 <script setup>
-import { computed, ref } from 'vue';
 import { Head, Link } from '@inertiajs/vue3';
-import Header from './Header.vue';
-import Footer from './Footer.vue';
+import Header from '../Header.vue';
+import Footer from '../Footer.vue';
 
 defineProps({
     news: Array,
@@ -81,7 +80,7 @@ defineProps({
                                         <p class="
                                             date
                                             mb-1
-                                            ">{{ n.public_date }}</p>
+                                            ">{{ new Date(n.public_date).toLocaleDateString('sv-SE') }}</p>
                                         <Link :href="route('news.detail', n)" class="
                                             text
                                             underline

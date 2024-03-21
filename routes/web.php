@@ -22,13 +22,11 @@ use Inertia\Inertia;
 Route::get('/', [TopController::class, 'index'])
     ->name('top');
 
-Route::get('/news', function () {
-    return Inertia::render('Template/News/Index');
-})->name('news.index');
+Route::get('/news', [TopController::class, 'news'])
+    ->name('news.index');
 
-Route::get('/news/{news}', function () {
-    return Inertia::render('Template/News/Detail');
-})->name('news.detail');
+Route::get('/news/{news}', [TopController::class, 'newsDetail'])
+    ->name('news.detail');
 
 Route::get('/admin/feature', [FeatureController::class, 'index'])
     ->middleware(['auth', 'verified'])

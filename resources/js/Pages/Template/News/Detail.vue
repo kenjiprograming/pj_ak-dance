@@ -1,19 +1,12 @@
 <script setup>
-import { computed, ref } from 'vue';
 import { Head, Link } from '@inertiajs/vue3';
-import Header from './Header.vue';
-import Footer from './Footer.vue';
-import axios from 'axios';
+import Header from '../Header.vue';
+import Footer from '../Footer.vue';
 
-let news = ref('')
+defineProps({
+    news: Object,
+})
 
-axios.get('/api/news/', news.id)
-    .then((response) => {
-        console.log(response);
-    })
-    .catch((error) => {
-        console.log(error);
-    })
 </script>
 
 <template>
@@ -23,6 +16,7 @@ axios.get('/api/news/', news.id)
 
     <div class="
         main-wrapper
+        h-screen
         bg-black
         text-slate-500
         ">
@@ -52,7 +46,7 @@ axios.get('/api/news/', news.id)
                             <h1 class="
                                 text-3xl
                                 font-extrabold
-                                ">タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</h1>
+                                ">{{ news.title }}</h1>
                         </div>
                     </div>
 
@@ -64,7 +58,7 @@ axios.get('/api/news/', news.id)
                         ">
                         <div class="
                             text
-                            ">2024.01.10</div>
+                            ">{{  new Date(news.public_date).toLocaleDateString('sv-SE')  }}</div>
                     </div>
 
                     <div class="content-outer">
@@ -87,29 +81,7 @@ axios.get('/api/news/', news.id)
                                 ">
                                 <p class="
                                     text
-                                    ">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
-                            </div>
-                        </div>
-
-                        <div class="
-                            content-inner
-                            mb-6
-                            ">
-
-                            <div class="
-                                heading
-                                text-2xl
-                                mb-3
-                                ">
-                                <h1>小見出し2</h1>
-                            </div>
-
-                            <div class="
-                                content
-                                ">
-                                <p class="
-                                    text
-                                    ">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+                                    ">{{ news.body }}</p>
                             </div>
                         </div>
 
@@ -120,9 +92,10 @@ axios.get('/api/news/', news.id)
                 <div class="
                     button-outer
                     flex
+                    mt-20
                     justify-center
                     ">
-                    <Link :href="route('news.list')" class="
+                    <Link :href="route('news.index')" class="
                         button-medium
                         text-slate-500
                         border-2
