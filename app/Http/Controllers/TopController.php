@@ -43,4 +43,12 @@ class TopController extends Controller
             ]
         );
     }
+
+    public function price()
+    {
+        return Inertia::render(
+            'Template/Price/Index',
+            []
+        );
+    }
 }

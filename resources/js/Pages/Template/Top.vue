@@ -481,7 +481,7 @@ const era = getEra()
                     button-outer
                     flex justify-evenly
                     ">
-                    <a href="./price.html" class="
+                    <Link :href="route('price.index')" class="
                         button-large
                         border-slate-600 border-2
                         py-5 px-16
@@ -489,7 +489,7 @@ const era = getEra()
                         ">
                         <p class="
                             ">レッスン料金はこちら</p>
-                    </a>
+                    </Link>
                 </div>
             </div>
 

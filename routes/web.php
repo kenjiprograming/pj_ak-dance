@@ -28,6 +28,9 @@ Route::get('/news', [TopController::class, 'news'])
 Route::get('/news/{news}', [TopController::class, 'newsDetail'])
     ->name('news.detail');
 
+Route::get('/price', [TopController::class, 'price'])
+    ->name('price.index');
+
 Route::get('/admin/feature', [FeatureController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('admin.feature.index');
