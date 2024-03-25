@@ -63,32 +63,33 @@ const era = getEra()
             <div id="news-wrapper" class="
                 news-wrapper
                 px-2 py-4
+                lg:px-16 lg:pt-32 lg:mb-28
                 ">
                 <div class="
                     inner
+                    lg:py-8 lg:px-16
+                    lg:border lg:border-slate-500
                     ">
 
                     <div class="
                         heading-outer
-                        flex
-                        justify-center
+                        flex justify-center
+                        lg:block
+                        lg:mb-6
                         ">
                         <div class="
                             heading
                             bg-white
-                            border-4
-                            border-slate-500
-                            w-56
-                            text-center
-                            text-slate-500
-                            font-bold
-                            mb-4
+                            w-44 py-1 mb-4
+                            border-4 border-slate-500
+                            text-center text-slate-500 font-bold
                             ">
                             <h1 class="
                                 text-3xl
                                 ">News</h1>
                             <p class="
                                 text
+                                -mt-2
                                 ">お知らせ</p>
                         </div>
                     </div>
@@ -98,23 +99,24 @@ const era = getEra()
                         py-2
                         ">
 
-                        <div v-for="n in news"  class="
+                        <div v-for="n in news" class="
                             item
-                            ms-1
-                            border-s-2
-                            border-slate-500
-                            ps-2
-                            mb-4
+                            border-s-2 border-slate-500
+                            ps-2 ms-1 mb-4
+                            lg:mb-6
                             ">
-                            <div v-if="n.status === 'public'">
+                            <div v-if="n.status === 'public'" class="
+                                lg:flex
+                                ">
                                 <p class="
                                     date
+                                    lg:content-center
                                     ">{{ new Date(n.public_date).toLocaleDateString('sv-SE') }}</p>
                                 <Link :href="route('news.detail', n)" class="
                                     text
-                                    text-lg
-                                    font-semibold
+                                    text-lg font-semibold
                                     underline
+                                    lg:ms-8
                                     ">{{ n.title }}</Link>
                             </div>
                         </div>
@@ -128,11 +130,9 @@ const era = getEra()
                         <Link :href="route('news.index')" class="
                             button-medium
                             text-slate-500
-                            border-2
-                            border-slate-500
-                            py-3 px-8
-                            w-30
-                            hover:bg-white
+                            border-2 border-slate-500
+                            w-30 py-4 px-8
+                            hover:bg-white transition
                             ">
                             <p>一覧はこちら</p>
                         </Link>
@@ -140,9 +140,12 @@ const era = getEra()
                 </div>
             </div>
 
+
             <div id="career-wrapper" class="
                 career-wrapper
                 my-20
+                lg:px-16 lg:pt-32 lg:mt-28 lg:mb-0
+                lg:flex lg:justify-center
                 ">
                 <div class="
                     career-box
@@ -151,13 +154,13 @@ const era = getEra()
 
                     <div class="
                         shindenzu
-                        hidden
+                        max-lg:hidden
                         ">
                         <img src="/images/shindenzu-red.png" alt="">
                     </div>
                     <div class="
                         shindenzu-sp
-                        md:hidden
+                        lg:hidden
                         ">
                         <img src="/images/shindenzu-red-sp.png" alt="" class="
                             w-16
@@ -169,24 +172,21 @@ const era = getEra()
                         ">
                         <div class="
                             heading-outer
-                            flex
-                            justify-center
+                            flex justify-center
                             ">
                             <div class="
                                 heading
                                 bg-white
-                                border-4
-                                border-slate-500
-                                w-56
-                                text-center
-                                text-slate-500
-                                font-bold
+                                w-44 py-1 mb-4
+                                border-4 border-slate-500
+                                text-center text-slate-500 font-bold
                                 ">
                                 <h1 class="
                                     text-3xl
                                     ">Instructor</h1>
                                 <p class="
                                     text
+                                    -mt-2
                                     ">講師</p>
                             </div>
                         </div>
@@ -194,15 +194,14 @@ const era = getEra()
                         <h2 class="
                             pc-h2
                             my-6
-                            text-center
-                            text-3xl
-                            text-red-600
+                            text-center text-3xl text-red-600
+                            lg:my-6
                             ">AIKA</h2>
+
                         <p class="
                             text
-                            text-md
-                            leading-7
-                            text-white
+                            text-md leading-7 text-white
+                            lg:text-center lg:leading-8
                             ">
                             5歳からダンスを始め、今年でダンス歴{{era}}年目。<br class="">
                             ヒップホップ、ガールズ、ブレイク、ロック、ジャズ、ハウス、ポップなど、あらゆるダンスジャンルを習得。<br class="">
@@ -215,16 +214,14 @@ const era = getEra()
 
                     <div class="
                         shindenzu
-                        hidden
+                        max-lg:hidden
+                        w-16
                         ">
-                        <img src="/images/shindenzu-red.png" alt="">
                     </div>
                     <div class="
                         shindenzu-sp
-                        md:hidden
-                        flex
-                        flex-col
-                        justify-end
+                        lg:hidden
+                        flex flex-col justify-end
                         ">
                         <img src="/images/shindenzu-red-sp.png" alt="" class="
                             w-16
@@ -237,6 +234,8 @@ const era = getEra()
             <div id="concept-wrapper" class="
                 concept-wrapper
                 my-20
+                lg:px-16 lg:pt-32 lg:mb-60 lg:mt-0
+                lg:flex lg:justify-center
                 ">
 
                 <div class="
@@ -246,54 +245,56 @@ const era = getEra()
 
                     <div class="
                         shindenzu
-                        hidden
+                        max-lg:hidden
+                        w-16
                         ">
-                        <img src="/images/shindenzu-silver.png" alt="">
                     </div>
                     <div class="
                         shindenzu-sp
-                        md:hidden
+                        lg:hidden
                         ">
                         <img src="/images/shindenzu-silver-sp.png" alt="" class="
                             w-16
                             ">
                     </div>
 
-                    <div class="inner">
+                    <div class="
+                        inner
+                        ">
 
                         <div class="
                             heading-outer
-                            flex
-                            justify-center
+                            flex justify-center
                             ">
                             <div class="
                                 heading
                                 bg-white
-                                border-4
-                                border-slate-500
-                                w-56
-                                text-center
-                                text-slate-500
-                                font-bold
+                                w-44 py-1 mb-4
+                                border-4 border-slate-500
+                                text-center text-slate-500 font-bold
                                 ">
                                 <h1 class="
                                     text-3xl
                                     ">Concept</h1>
                                 <p class="
                                     text
+                                    -mt-2
                                     ">コンセプト</p>
                             </div>
                         </div>
 
                         <p class="
                             text
-                            my-6
-                            leading-7
-                            text-white
+                            text-md leading-7 text-white
+                            lg:text-center
+                            lg:mt-8
+                            lg:leading-9
                             ">
-                            ダンサー<span class="aika text-2xl text-red-600">&nbsp;AIKA&nbsp;</span>による<br class="sp-br"><span class="font-bold text-xl text-slate-500">&nbsp;”完全レベル分け制”&nbsp;</span>スクール。<br class="sp-br">
+                            ダンサー<span class="aika text-2xl text-red-600">&nbsp;AIKA&nbsp;</span>による<br class="sp-br lg:hidden">
+                            <span class="font-bold text-xl text-slate-500">&nbsp;”完全レベル分け制”&nbsp;</span>スクール。<br class="sp-br">
                             一人一人がダンスをしっかり基礎から楽しく学べるスクールです。<br class="pc-br">
-                            そして、ダンスのスキルだけでなくダンサー向けの<br class="sp-br"><span class="font-bold text-xl text-slate-500">&nbsp;”ファッションセンス”&nbsp;</span>や<br class="sp-br">
+                            そして、ダンスのスキルだけでなくダンサー向けの<br class="sp-br lg:hidden">
+                            <span class="font-bold text-xl text-slate-500">&nbsp;”ファッションセンス”&nbsp;</span>や<br class="sp-br lg:hidden">
                             <span class="font-bold text-xl text-slate-500">&nbsp;”ヘアメイク”&nbsp;</span>も学びながら、<br class="sp-br">
                             ダンスを生かして一人一人が輝けるようになることがこのスタジオのコンセプトです。
                         </p>
@@ -302,16 +303,13 @@ const era = getEra()
 
                     <div class="
                         shindenzu
-                        hidden
+                        max-lg:hidden
                         ">
                         <img src="/images/shindenzu-silver.png" alt="">
                     </div>
                     <div class="
                         shindenzu-sp
-                        md:hidden
-                        flex
-                        flex-col
-                        justify-end
+                        lg:hidden
                         ">
                         <img src="/images/shindenzu-silver-sp.png" alt="" class="
                             w-16
@@ -321,7 +319,9 @@ const era = getEra()
                 </div>
             </div>
 
-            <div class="movie-wrapper" id="movie-wrapper">
+            <div id="movie-wrapper" class="
+                movie-wrapper
+                ">
                 <div class="list">
                     <div class="item">
                         <!-- <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@_aika_0121/video/7238874983752043777" data-video-id="7238874983752043777" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@_aika_0121" href="https://www.tiktok.com/@_aika_0121?refer=embed">@_aika_0121</a> Just Relax😮‍💨 @Dexter Carr choreography⭐️ <a title="la" target="_blank" href="https://www.tiktok.com/tag/la?refer=embed">#la</a> <a title="laダンス留学" target="_blank" href="https://www.tiktok.com/tag/la%E3%83%80%E3%83%B3%E3%82%B9%E7%95%99%E5%AD%A6?refer=embed">#laダンス留学</a> <a title="justrelax" target="_blank" href="https://www.tiktok.com/tag/justrelax?refer=embed">#justrelax</a> <a title="lolabrooke" target="_blank" href="https://www.tiktok.com/tag/lolabrooke?refer=embed">#lolabrooke</a> <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a> <a title="02" target="_blank" href="https://www.tiktok.com/tag/02?refer=embed">#02</a> <a title="dancer" target="_blank" href="https://www.tiktok.com/tag/dancer?refer=embed">#dancer</a> <a title="playgroundla" target="_blank" href="https://www.tiktok.com/tag/playgroundla?refer=embed">#playgroundla</a> <a target="_blank" title="♬ original sound - Dexter Carr" href="https://www.tiktok.com/music/original-sound-7237944492421040938?refer=embed">♬ original sound - Dexter Carr</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script> -->
@@ -335,7 +335,9 @@ const era = getEra()
             <div class="
                 sns-wrapper
                 my-40
+                lg:my-60
                 ">
+
                 <div class="
                     list
                     flex
@@ -370,6 +372,7 @@ const era = getEra()
             <div id="schedule-wrapper" class="
                 schedule-wrapper
                 my-20
+                lg:pt-32 lg:mb-28
                 ">
                 <div class="
                     inner
@@ -380,36 +383,33 @@ const era = getEra()
 
                     <div class="
                         heading-outer
-                        flex
-                        justify-center
+                        flex justify-center
+                        lg:block
+                        lg:mb-6
                         ">
                         <div class="
                             heading
                             bg-white
-                            border-4
-                            border-slate-500
-                            w-56
-                            text-center
-                            text-slate-500
-                            font-bold
+                            w-44 py-1 mb-4
+                            border-4 border-slate-500
+                            text-center text-slate-500 font-bold
                             ">
                             <h1 class="
                                 text-3xl
                                 ">Schedule</h1>
                             <p class="
                                 text
+                                -mt-2
                                 ">レッスン日程</p>
                         </div>
                     </div>
 
                     <div class="
-                        my-6
-                        w-11/12
-                        overflow-scroll
-                        block
+                        max-lg:w-11/12 max-lg:my-6
+                        max-lg:overflow-scroll
                         ">
                         <img src="/images/schedule-table.svg" alt="" class="
-                            max-w-none
+                            max-lg:max-w-none
                         ">
                     </div>
 
@@ -419,30 +419,32 @@ const era = getEra()
             <div id="access-wrapper" class="
                 access-wrapper
                 my-20
+                lg:pt-32
                 ">
 
-                <div class="inner">
+                <div class="
+                    inner
+                    lg:flex lg:flex-col lg:items-center
+                    ">
 
                     <div class="
                         heading-outer
-                        flex
-                        justify-center
+                        flex justify-center
                         ">
                         <div class="
                             heading
                             bg-white
-                            border-4
-                            border-slate-500
-                            w-56
-                            text-center
-                            text-slate-500
-                            font-bold
+                            w-44 py-1 mb-4
+                            border-4 border-slate-500
+                            text-center text-slate-500 font-bold
+                            lg:mb-0
                             ">
                             <h1 class="
                                 text-3xl
                                 ">Access</h1>
                             <p class="
                                 text
+                                -mt-2
                                 ">アクセス</p>
                         </div>
                     </div>
@@ -451,6 +453,7 @@ const era = getEra()
                         map
                         my-6
                         w-full
+                        lg:w-11/12
                         "
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.810517090736!2d137.762090174159!3d34.73517028136524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ae09e16812de9%3A0xbc6b88d77fda8033!2z6Z-z5qW95aSp5Zu944O75rWc5p2-5biC6YeO5bqXIOmfs-alveOBruiyuOOBl-ODrOODs-OCv-ODq-OCueOCv-OCuOOCqg!5e0!3m2!1sja!2sjp!4v1706926293431!5m2!1sja!2sjp"
                         width="1000" height="562.5" style="border:0;" allowfullscreen="" loading="lazy"
@@ -472,23 +475,19 @@ const era = getEra()
             <div class="
                 price-wrapper
                 my-40
+                lg:my-60
                 ">
                 <div class="
                     button-outer
-                    flex
-                    justify-evenly
+                    flex justify-evenly
                     ">
                     <a href="./price.html" class="
                         button-large
-                        border-slate-600
-                        border-2
-                        px-16
-                        py-5
+                        border-slate-600 border-2
+                        py-5 px-16
+                        hover:bg-white transition
                         ">
                         <p class="
-                            text-slate-600
-                            text-md
-                            font-extrabold
                             ">レッスン料金はこちら</p>
                     </a>
                 </div>
@@ -496,39 +495,33 @@ const era = getEra()
 
             <div id="contact-wrapper" class="
                 contact-wrapper
-                mt-20
-                px-4
-                pb-40
+                px-4 pb-40 mt-20
+                lg:px-40
                 ">
 
                 <div class="
                     inner
                     py-16
-                    border-t
-                    border-b
-                    border-slate-600
+                    border-slate-600 border-y
                     ">
 
                     <div class="
                         heading-outer
-                        flex
-                        justify-center
+                        flex justify-center
                         ">
                         <div class="
                             heading
                             bg-white
-                            border-4
-                            border-slate-500
-                            w-56
-                            text-center
-                            text-slate-500
-                            font-bold
+                            w-44 py-1 mb-4
+                            border-4 border-slate-500
+                            text-center text-slate-500 font-bold
                             ">
                             <h1 class="
                                 text-3xl
                                 ">Contact</h1>
                             <p class="
                                 text
+                                -mt-2
                                 ">お問い合わせ</p>
                         </div>
                     </div>
@@ -541,7 +534,7 @@ const era = getEra()
                         text-center
                         ">
                         お問い合わせやお依頼は、お気軽に以下の公式ラインよりご連絡ください。<br>
-                        1週間以内に返信いたします。
+                        返信まで1週間程度お待ちください。
                     </p>
 
                     <a href="#" target="_blank" class="

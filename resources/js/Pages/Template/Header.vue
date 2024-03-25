@@ -99,7 +99,7 @@ const isTopRoute = computed(() => {
                         mx-2
                         underline
                         ">レッスン</a>
-                    <a href="#access-wrapperlass" class="
+                    <a href="#access-wrapper" class="
                         gnavi-item link
                         mx-2
                         underline
@@ -135,44 +135,57 @@ const isTopRoute = computed(() => {
             py-4
             h-auto
             ">
-            <div class="
+            <div v-if="!isTopRoute" class="
                 flex justify-center
                 my-4
                 ">
-                <a class="
+                <Link :href="route('top')" class="
                     w-40 py-4 mx-8
                     text-white text-center border
-                    " href="./index.html#news-wrapper">お知らせ</a>
-                <a class="
+                    ">トップ</Link>
+                <Link :href="route('news.index')" class="
                     w-40 py-4 mx-8
                     text-white text-center border
-                    " href="./index.html#career-wrapper">講師</a>
+                    ">お知らせ一覧</Link>
             </div>
-            <div class="
+            <div v-if="isTopRoute" class="
                 flex justify-center
                 my-4
                 ">
                 <a class="
                     w-40 py-4 mx-8
                     text-white text-center border
-                    " href="./index.html#concept-wrapper">コンセプト</a>
+                    " href="#news-wrapper">お知らせ</a>
                 <a class="
                     w-40 py-4 mx-8
                     text-white text-center border
-                    " href="./index.html#schedule-wrapper">レッスン</a>
+                    " href="#career-wrapper">講師</a>
             </div>
-            <div class="
+            <div v-if="isTopRoute" class="
                 flex justify-center
                 my-4
                 ">
                 <a class="
                     w-40 py-4 mx-8
                     text-white text-center border
-                    " href="./index.html#access-wrapper">アクセス</a>
+                    " href="#concept-wrapper">コンセプト</a>
                 <a class="
                     w-40 py-4 mx-8
                     text-white text-center border
-                    " href="./index.html#contact-wrapper">お問い合わせ</a>
+                    " href="#schedule-wrapper">レッスン</a>
+            </div>
+            <div v-if="isTopRoute" class="
+                flex justify-center
+                my-4
+                ">
+                <a class="
+                    w-40 py-4 mx-8
+                    text-white text-center border
+                    " href="#access-wrapper">アクセス</a>
+                <a class="
+                    w-40 py-4 mx-8
+                    text-white text-center border
+                    " href="#contact-wrapper">お問い合わせ</a>
             </div>
         </div>
     </header>
