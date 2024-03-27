@@ -9,7 +9,16 @@ import { Head, Link } from '@inertiajs/vue3';
     <AuthenticatedLayout>
         <template #header>
             <div class="flex justify-between">
-                <div class="text-slate-50 font-semibold text-xl">機能一覧</div>
+                <div class="
+                    text-slate-50 font-semibold text-xl
+                    ">機能一覧</div>
+                <a :href="route('top')" target="_blank" class="
+                    text-black font-semibold leading-7
+                    bg-white
+                    rounded
+                    px-2
+                    hover:bg-slate-100 transition
+                    ">公開サイトを見る</a>
             </div>
         </template>
 
