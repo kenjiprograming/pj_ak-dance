@@ -23,7 +23,7 @@ import Footer from '../Footer.vue';
                 bg-black
                 text-slate-500
                 py-10
-                lg:pt-32 lg:mb-28
+                lg:py-28
                 ">
 
                 <div class="

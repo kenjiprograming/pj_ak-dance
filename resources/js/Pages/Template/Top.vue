@@ -63,6 +63,7 @@ const era = getEra()
             <div id="news-wrapper" class="
                 news-wrapper
                 px-2 py-4
+                lg:max-w-7xl lg:mx-auto
                 lg:px-16 lg:pt-32 lg:mb-28
                 ">
                 <div class="
@@ -145,25 +146,27 @@ const era = getEra()
                 career-wrapper
                 my-20
                 lg:px-16 lg:pt-32 lg:mt-28 lg:mb-0
-                lg:flex lg:justify-center
+                lg:max-w-7xl mx-auto
                 ">
                 <div class="
                     career-box
-                    flex
+                    flex justify-evenly
                     ">
 
                     <div class="
                         shindenzu
                         max-lg:hidden
                         ">
-                        <img src="/images/shindenzu-red.png" alt="">
+                        <img src="/images/shindenzu-red.png" alt="" class="
+                            w-16
+                            ">
                     </div>
                     <div class="
                         shindenzu-sp
                         lg:hidden
                         ">
                         <img src="/images/shindenzu-red-sp.png" alt="" class="
-                            w-16
+                            w-10
                             ">
                     </div>
 
@@ -214,20 +217,9 @@ const era = getEra()
 
                     <div class="
                         shindenzu
-                        max-lg:hidden
-                        w-16
+                        lg:w-16 max-lg:w-10
                         ">
                     </div>
-                    <div class="
-                        shindenzu-sp
-                        lg:hidden
-                        flex flex-col justify-end
-                        ">
-                        <img src="/images/shindenzu-red-sp.png" alt="" class="
-                            w-16
-                            ">
-                    </div>
-
                 </div>
             </div>
 
@@ -235,27 +227,18 @@ const era = getEra()
                 concept-wrapper
                 my-20
                 lg:px-16 lg:pt-32 lg:mb-60 lg:mt-0
-                lg:flex lg:justify-center
+                lg:max-w-7xl lg:mx-auto
                 ">
 
                 <div class="
                     concept-box
-                    flex
+                    flex justify-evenly
                     ">
 
                     <div class="
                         shindenzu
-                        max-lg:hidden
-                        w-16
+                        lg:w-16 max-lg:w-10
                         ">
-                    </div>
-                    <div class="
-                        shindenzu-sp
-                        lg:hidden
-                        ">
-                        <img src="/images/shindenzu-silver-sp.png" alt="" class="
-                            w-16
-                            ">
                     </div>
 
                     <div class="
@@ -305,14 +288,16 @@ const era = getEra()
                         shindenzu
                         max-lg:hidden
                         ">
-                        <img src="/images/shindenzu-silver.png" alt="">
+                        <img src="/images/shindenzu-silver.png" alt="" class="
+                            w-16
+                            ">
                     </div>
                     <div class="
                         shindenzu-sp
                         lg:hidden
                         ">
                         <img src="/images/shindenzu-silver-sp.png" alt="" class="
-                            w-16
+                            w-10
                             ">
                     </div>
 
@@ -340,8 +325,9 @@ const era = getEra()
 
                 <div class="
                     list
-                    flex
-                    justify-evenly
+                    flex justify-evenly
+                    lg:max-w-7xl
+                    lg:mx-auto
                     ">
                     <div class="
                         item

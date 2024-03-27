@@ -43,15 +43,16 @@ marked.setOptions({ renderer })
 
             <div id="news-detail-wrapper" class="
                 news-detail-wrapper
-                py-10
-                px-2
+                py-10 px-2
+                lg:max-w-7xl lg:mx-auto
+                lg:px-16 lg:pt-16 lg:mb-28
                 ">
 
-                <div class="inner
-                    border-t
-                    border-s
-                    border-slate-500
+                <div class="
+                    inner
+                    border-t border-s border-slate-500
                     p-2
+                    lg:p-10
                     ">
 
                     <div class="
