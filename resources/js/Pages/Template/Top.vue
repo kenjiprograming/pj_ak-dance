@@ -3,6 +3,7 @@ import { computed, ref } from 'vue';
 import { Head, Link } from '@inertiajs/vue3';
 import Header from './Header.vue';
 import Footer from './Footer.vue';
+import Heading from '../../Components/Heading.vue';
 import { onMounted } from 'vue';
 
 defineProps({
@@ -86,28 +87,9 @@ onMounted(() => {
                         lg:px-16 py-20
                         ">
 
-                        <div class="
-                            heading-outer
-                            w-48 h-16
-                            mb-12 max-lg:mx-auto lg:me-auto
-                            border-silver-2
-                            ">
-                            <div class="
-                                heading
-                                bg-black
-                                w-full h-full
-                                text-center content-center font-bold
-                                ">
-                                <h1 class="
-                                    text-3xl text-silver
-                                    ">News</h1>
-                                <p class="
-                                    text
-                                    text-silver
-                                    -mt-2
-                                    ">お知らせ</p>
-                            </div>
-                        </div>
+                        <Heading
+                            bigText="News"
+                            smallText="お知らせ" />
 
                         <div class="
                             list
@@ -128,12 +110,12 @@ onMounted(() => {
                                     <p class="
                                         date
                                         lg:content-center
-                                        text-silver
+                                        text-silver font-Lato
                                         ">{{ new Date(n.public_date).toLocaleDateString('sv-SE') }}</p>
 
                                     <Link :href="route('news.detail', n)" class="
                                         text
-                                        text-lg font-semibold text-silver
+                                        text-lg font-semibold text-silver font-Lato
                                         lg:ms-8
                                         ">{{ n.title }}</Link>
                                 </div>
@@ -159,8 +141,7 @@ onMounted(() => {
                                     hover:bg-white transition
                                     ">
                                     <span class="
-                                        text-silver
-                                        font-semibold
+                                        text-silver font-semibold font-Lato
                                         ">一覧はこちら</span></Link>
                             </div>
                         </div>
@@ -202,39 +183,20 @@ onMounted(() => {
                         inner
                         ">
 
-                        <div class="
-                            heading-outer
-                            w-48 h-16
-                            mb-12 mx-auto
-                            border-silver-2
-                            ">
-                            <div class="
-                                heading
-                                bg-black
-                                w-full h-full
-                                text-center content-center font-bold
-                                ">
-                                <h1 class="
-                                    text-3xl text-silver
-                                    ">Instructor</h1>
-                                <p class="
-                                    text
-                                    text-silver
-                                    -mt-2
-                                    ">講師</p>
-                            </div>
-                        </div>
+                        <Heading
+                            bigText="Instructor"
+                            smallText="講師" />
 
                         <h2 class="
                             pc-h2
                             my-6
-                            text-center text-3xl text-red-600
+                            text-center text-3xl text-red-600 font-SedgwickAve
                             lg:my-6
                             ">AIKA</h2>
 
                         <p class="
                             text
-                            text-md leading-7 text-white
+                            text-md leading-7 text-white font-Lato
                             lg:text-center lg:leading-8
                             ">
                             5歳からダンスを始め、今年でダンス歴{{era}}年目。<br class="">
@@ -276,37 +238,18 @@ onMounted(() => {
                         inner
                         ">
 
-                        <div class="
-                            heading-outer
-                            w-48 h-16
-                            mb-12 mx-auto
-                            border-silver-2
-                            ">
-                            <div class="
-                                heading
-                                bg-black
-                                w-full h-full
-                                text-center content-center font-bold
-                                ">
-                                <h1 class="
-                                    text-3xl text-silver
-                                    ">Concept</h1>
-                                <p class="
-                                    text
-                                    text-silver
-                                    -mt-2
-                                    ">コンセプト</p>
-                            </div>
-                        </div>
+                        <Heading
+                            bigText="Concept"
+                            smallText="コンセプト" />
 
                         <p class="
                             text
-                            text-md leading-7 text-white
+                            text-md leading-7 text-white font-Lato
                             lg:text-center
                             lg:mt-8
                             lg:leading-9
                             ">
-                            ダンサー<span class="aika text-2xl text-red-600">&nbsp;AIKA&nbsp;</span>による<br class="sp-br lg:hidden">
+                            ダンサー<span class="aika text-2xl text-red-600 font-SedgwickAve">&nbsp;AIKA&nbsp;</span>による<br class="sp-br lg:hidden">
                             <span class="font-bold text-xl text-silver">&nbsp;”完全レベル分け制”&nbsp;</span>スクール。<br class="sp-br">
                             一人一人がダンスをしっかり基礎から楽しく学べるスクールです。<br class="pc-br">
                             そして、ダンスのスキルだけでなくダンサー向けの<br class="sp-br lg:hidden">
@@ -434,28 +377,9 @@ onMounted(() => {
                     items-center
                     ">
 
-                    <div class="
-                        heading-outer
-                        w-48 h-16
-                        mb-12 mx-auto
-                        border-silver-2
-                        ">
-                        <div class="
-                            heading
-                            bg-black
-                            w-full h-full
-                            text-center content-center font-bold
-                            ">
-                            <h1 class="
-                                text-3xl text-silver
-                                ">Schedule</h1>
-                            <p class="
-                                text
-                                text-silver
-                                -mt-2
-                                ">レッスン日程</p>
-                        </div>
-                    </div>
+                    <Heading
+                        bigText="Schedule"
+                        smallText="レッスン日程" />
 
                     <div class="
                         max-lg:w-11/12 max-lg:my-6
@@ -480,28 +404,9 @@ onMounted(() => {
                     lg:flex lg:flex-col lg:items-center
                     ">
 
-                    <div class="
-                        heading-outer
-                        w-48 h-16
-                        mb-12 mx-auto
-                        border-silver-2
-                        ">
-                        <div class="
-                            heading
-                            bg-black
-                            w-full h-full
-                            text-center content-center font-bold
-                            ">
-                            <h1 class="
-                                text-3xl text-silver
-                                ">Access</h1>
-                            <p class="
-                                text
-                                text-silver
-                                -mt-2
-                                ">アクセス</p>
-                        </div>
-                    </div>
+                    <Heading
+                        bigText="Access"
+                        smallText="アクセス" />
 
                     <iframe class="
                         map
@@ -515,10 +420,10 @@ onMounted(() => {
 
                     <p class="
                         text
-                        text-white
+                        text-white font-Lato
                         px-6
                         ">
-                        会場：<a class="link text-silver underline" href="#" target="_blank">音楽天国 浜松市野店</a><br>
+                        会場：<a class="link text-silver font-semibold" href="#" target="_blank">音楽天国 浜松市野店</a><br>
                         住所：〒435-0052 <br><span style="margin-left: 50px;">静岡県浜松市中央区天王町１９８２−３</span>
                     </p>
 
@@ -546,8 +451,7 @@ onMounted(() => {
                         hover:bg-white transition
                         ">
                         <span class="
-                            text-silver
-                            font-semibold
+                            text-silver font-semibold font-Lato
                             ">レッスン料金はこちら</span></Link>
                 </div>
 
@@ -570,35 +474,14 @@ onMounted(() => {
                         py-20
                         ">
 
-                        <div class="
-                            heading-outer
-                            w-48 h-16
-                            mx-auto
-                            border-silver-2
-                            ">
-                            <div class="
-                                heading
-                                bg-black
-                                w-full h-full
-                                text-center content-center font-bold
-                                ">
-                                <h1 class="
-                                    text-3xl text-silver
-                                    ">Contact</h1>
-                                <p class="
-                                    text
-                                    text-silver
-                                    -mt-2
-                                    ">お問い合わせ</p>
-                            </div>
-                        </div>
+                        <Heading
+                            bigText="Contact"
+                            smallText="お問い合わせ" />
 
                         <p class="
                             text
-                            text-white
-                            my-6
-                            px-6
-                            text-center
+                            text-white text-center font-Lato
+                            my-6 px-6
                             ">
                             お問い合わせやお依頼は、お気軽に以下の公式ラインよりご連絡ください。<br>
                             返信まで1週間程度お待ちください。

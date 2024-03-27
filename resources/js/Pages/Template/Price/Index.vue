@@ -2,6 +2,7 @@
 import { Head, Link } from '@inertiajs/vue3';
 import Header from '../Header.vue';
 import Footer from '../Footer.vue';
+import Heading from '../../../Components/Heading.vue';
 
 </script>
 
@@ -33,28 +34,9 @@ import Footer from '../Footer.vue';
                     items-center
                     ">
 
-                    <div class="
-                        heading-outer
-                        w-48 h-16
-                        mb-12 mx-auto
-                        border-silver-2
-                        ">
-                        <div class="
-                            heading
-                            bg-black
-                            w-full h-full
-                            text-center content-center font-bold
-                            ">
-                            <h1 class="
-                                text-3xl text-silver
-                                ">Price</h1>
-                            <p class="
-                                text
-                                text-silver
-                                -mt-2
-                                ">レッスン料金</p>
-                        </div>
-                    </div>
+                    <Heading
+                        bigText="Price"
+                        smallText="レッスン料金" />
 
                     <div class="
                         max-lg:w-11/12 max-lg:my-6

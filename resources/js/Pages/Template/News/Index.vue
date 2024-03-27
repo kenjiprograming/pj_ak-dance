@@ -2,6 +2,7 @@
 import { Head, Link } from '@inertiajs/vue3';
 import Header from '../Header.vue';
 import Footer from '../Footer.vue';
+import Heading from '../../../Components/Heading.vue';
 
 defineProps({
     news: Array,
@@ -50,28 +51,9 @@ defineProps({
                                 lg:px-16 py-20
                                 ">
 
-                                <div class="
-                                    heading-outer
-                                    w-48 h-16
-                                    mb-12 mx-auto
-                                    border-silver-2
-                                    ">
-                                    <div class="
-                                        heading
-                                        bg-black
-                                        w-full h-full
-                                        text-center content-center font-bold
-                                        ">
-                                        <h1 class="
-                                            text-3xl text-silver
-                                            ">News</h1>
-                                        <p class="
-                                            text
-                                            text-silver
-                                            -mt-2
-                                            ">お知らせ一覧</p>
-                                    </div>
-                                </div>
+                                <Heading
+                                    bigText="News"
+                                    smallText="お知らせ一覧" />
 
                                 <div class="
                                     list
