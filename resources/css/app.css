@@ -6,12 +6,12 @@
 
 @layer components {
     .text-silver {
-        @apply bg-gradient-to-br from-blue-500 via-green-500 to-yellow-200 bg-clip-text text-transparent
+        @apply bg-gradient-to-br from-gray-500 via-slate-200 to-slate-500 bg-clip-text text-transparent
     }
     .border-silver-1 {
-        @apply bg-gradient-to-br from-blue-500 via-green-500 to-yellow-200 p-0.5
+        @apply bg-gradient-to-br from-gray-500 via-slate-200 to-slate-500 p-0.5
     }
     .border-silver-2 {
-        @apply bg-gradient-to-br from-blue-500 via-green-500 to-yellow-200 p-1
+        @apply bg-gradient-to-br from-gray-500 via-slate-200 to-slate-500 p-1
     }
 }
