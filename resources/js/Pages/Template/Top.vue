@@ -315,10 +315,13 @@ onMounted(() => {
             <div id="movie-wrapper" class="
                 movie-wrapper
                 ">
-                <div class="list">
+                <div class="
+                    list
+                    lg:flex lg:justify-evenly
+                    ">
                     <div class="
                         item
-                        bg-white
+                        max-lg:mb-20
                         ">
                         <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@_aika_0121/video/7238874983752043777" data-video-id="7238874983752043777" style="max-width: 605px;min-width: 325px;" >
                             <section>
@@ -338,7 +341,6 @@ onMounted(() => {
                     </div>
                     <div class="
                         item
-                        bg-white
                         ">
                         <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@_aika_0121/video/7235002863796129026" data-video-id="7235002863796129026" style="max-width: 605px;min-width: 325px;" >
                             <section>
