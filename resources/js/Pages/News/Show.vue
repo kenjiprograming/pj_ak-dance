@@ -27,7 +27,7 @@ marked.setOptions({ renderer })
 </script>
 
 <template>
-    <Head title="お知らせ詳細プレビュー" />
+    <Head title="お知らせプレビュー" />
 
     <AuthenticatedLayout>
         <template #header>

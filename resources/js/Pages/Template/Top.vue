@@ -39,7 +39,7 @@ const era = getEra()
 </script>
 
 <template>
-    <Head title="AK-DANCE" />
+    <Head title="トップ" />
 
     <Header />
 

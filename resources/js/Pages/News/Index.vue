@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-    <Head title="お知らせ機能" />
+    <Head title="お知らせ一覧" />
 
     <AuthenticatedLayout>
         <template #header>

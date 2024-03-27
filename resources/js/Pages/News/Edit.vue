@@ -26,7 +26,7 @@ const submit = () => {
 </script>
 
 <template>
-    <Head title="お知らせ詳細" />
+    <Head title="お知らせ編集" />
 
     <AuthenticatedLayout>
         <template #header>

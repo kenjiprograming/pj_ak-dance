@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-    <Head title="AK-DANCE" />
+    <Head title="お知らせ一覧" />
 
     <Header />
 

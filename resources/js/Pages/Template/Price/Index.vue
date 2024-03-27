@@ -6,7 +6,7 @@ import Footer from '../Footer.vue';
 </script>
 
 <template>
-    <Head title="AK-DANCE" />
+    <Head title="レッスン料金" />
 
     <Header />
 

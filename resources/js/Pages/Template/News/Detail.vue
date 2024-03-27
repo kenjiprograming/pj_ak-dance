@@ -28,7 +28,7 @@ marked.setOptions({ renderer })
 </script>
 
 <template>
-    <Head title="AK-DANCE" />
+    <Head title="お知らせ詳細" />
 
     <Header />
 
