@@ -13,7 +13,9 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                Lato: ['Lato', ...defaultTheme.fontFamily.sans],
+                RussoOne: ['Russo One', ...defaultTheme.fontFamily.sans],
+                SedgwickAve: ['Sedgwick Ave', ...defaultTheme.fontFamily.sans],
             },
         },
     },
