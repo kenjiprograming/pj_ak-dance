@@ -54,7 +54,6 @@ onMounted(() => {
     <div class="
         main-wrapper
         bg-black
-        text-slate-500
         ">
 
         <div class="mainvisual-wrapper">
@@ -76,78 +75,97 @@ onMounted(() => {
                 lg:max-w-7xl lg:mx-auto
                 lg:px-16 lg:pt-32 lg:mb-28
                 ">
+
                 <div class="
                     inner
-                    lg:py-8 lg:px-16
-                    lg:border lg:border-slate-500
+                    lg:border-silver-1
                     ">
 
                     <div class="
-                        heading-outer
-                        flex justify-center
-                        lg:block
-                        lg:mb-6
+                        bg-black
+                        lg:px-16 py-20
                         ">
+
                         <div class="
-                            heading
-                            bg-white
-                            w-44 py-1 mb-4
-                            border-4 border-slate-500
-                            text-center text-slate-500 font-bold
+                            heading-outer
+                            w-48 h-16
+                            mb-12 max-lg:mx-auto lg:me-auto
+                            border-silver-2
                             ">
-                            <h1 class="
-                                text-3xl
-                                ">News</h1>
-                            <p class="
-                                text
-                                -mt-2
-                                ">お知らせ</p>
-                        </div>
-                    </div>
-
-                    <div class="
-                        list
-                        py-2
-                        ">
-
-                        <div v-for="n in news" class="
-                            item
-                            border-s-2 border-slate-500
-                            ps-2 ms-1 mb-4
-                            lg:mb-6
-                            ">
-                            <div v-if="n.status === 'public'" class="
-                                lg:flex
+                            <div class="
+                                heading
+                                bg-black
+                                w-full h-full
+                                text-center content-center font-bold
                                 ">
+                                <h1 class="
+                                    text-3xl text-silver
+                                    ">News</h1>
                                 <p class="
-                                    date
-                                    lg:content-center
-                                    ">{{ new Date(n.public_date).toLocaleDateString('sv-SE') }}</p>
-                                <Link :href="route('news.detail', n)" class="
                                     text
-                                    text-lg font-semibold
-                                    underline
-                                    lg:ms-8
-                                    ">{{ n.title }}</Link>
+                                    text-silver
+                                    -mt-2
+                                    ">お知らせ</p>
+                            </div>
+                        </div>
+
+                        <div class="
+                            list
+                            py-2
+                            ">
+
+                            <div v-for="n in news" class="
+                                item
+                                border-silver-1
+                                p-0 mb-6
+                                ">
+                                <div v-if="n.status === 'public'" class="
+                                    lg:flex
+                                    ps-2 ms-0.5
+                                    bg-black
+                                    ">
+
+                                    <p class="
+                                        date
+                                        lg:content-center
+                                        text-silver
+                                        ">{{ new Date(n.public_date).toLocaleDateString('sv-SE') }}</p>
+
+                                    <Link :href="route('news.detail', n)" class="
+                                        text
+                                        text-lg font-semibold text-silver
+                                        lg:ms-8
+                                        ">{{ n.title }}</Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="
+                            button-outer
+                            flex
+                            justify-center
+                            ">
+                            <div class="
+                                w-32 h-12
+                                mx-auto
+                                border-silver-1
+                                ">
+                                <Link :href="route('news.index')" class="
+                                    button-medium
+                                    text-center
+                                    bg-black
+                                    w-full h-full
+                                    flex items-center justify-center
+                                    hover:bg-white transition
+                                    ">
+                                    <span class="
+                                        text-silver
+                                        font-semibold
+                                        ">一覧はこちら</span></Link>
                             </div>
                         </div>
                     </div>
 
-                    <div class="
-                        button-outer
-                        flex
-                        justify-center
-                        ">
-                        <Link :href="route('news.index')" class="
-                            button-medium
-                            text-slate-500
-                            border-2 border-slate-500
-                            w-30 py-4 px-8
-                            hover:bg-white transition
-                            ">
-                            <p>一覧はこちら</p>
-                        </Link>
-                    </div>
                 </div>
             </div>
 
@@ -183,22 +201,25 @@ onMounted(() => {
                     <div class="
                         inner
                         ">
+
                         <div class="
                             heading-outer
-                            flex justify-center
+                            w-48 h-16
+                            mb-12 mx-auto
+                            border-silver-2
                             ">
                             <div class="
                                 heading
-                                bg-white
-                                w-44 py-1 mb-4
-                                border-4 border-slate-500
-                                text-center text-slate-500 font-bold
+                                bg-black
+                                w-full h-full
+                                text-center content-center font-bold
                                 ">
                                 <h1 class="
-                                    text-3xl
+                                    text-3xl text-silver
                                     ">Instructor</h1>
                                 <p class="
                                     text
+                                    text-silver
                                     -mt-2
                                     ">講師</p>
                             </div>
@@ -257,20 +278,22 @@ onMounted(() => {
 
                         <div class="
                             heading-outer
-                            flex justify-center
+                            w-48 h-16
+                            mb-12 mx-auto
+                            border-silver-2
                             ">
                             <div class="
                                 heading
-                                bg-white
-                                w-44 py-1 mb-4
-                                border-4 border-slate-500
-                                text-center text-slate-500 font-bold
+                                bg-black
+                                w-full h-full
+                                text-center content-center font-bold
                                 ">
                                 <h1 class="
-                                    text-3xl
+                                    text-3xl text-silver
                                     ">Concept</h1>
                                 <p class="
                                     text
+                                    text-silver
                                     -mt-2
                                     ">コンセプト</p>
                             </div>
@@ -284,11 +307,11 @@ onMounted(() => {
                             lg:leading-9
                             ">
                             ダンサー<span class="aika text-2xl text-red-600">&nbsp;AIKA&nbsp;</span>による<br class="sp-br lg:hidden">
-                            <span class="font-bold text-xl text-slate-500">&nbsp;”完全レベル分け制”&nbsp;</span>スクール。<br class="sp-br">
+                            <span class="font-bold text-xl text-silver">&nbsp;”完全レベル分け制”&nbsp;</span>スクール。<br class="sp-br">
                             一人一人がダンスをしっかり基礎から楽しく学べるスクールです。<br class="pc-br">
                             そして、ダンスのスキルだけでなくダンサー向けの<br class="sp-br lg:hidden">
-                            <span class="font-bold text-xl text-slate-500">&nbsp;”ファッションセンス”&nbsp;</span>や<br class="sp-br lg:hidden">
-                            <span class="font-bold text-xl text-slate-500">&nbsp;”ヘアメイク”&nbsp;</span>も学びながら、<br class="sp-br">
+                            <span class="font-bold text-xl text-silver">&nbsp;”ファッションセンス”&nbsp;</span>や<br class="sp-br lg:hidden">
+                            <span class="font-bold text-xl text-silver">&nbsp;”ヘアメイク”&nbsp;</span>も学びながら、<br class="sp-br">
                             ダンスを生かして一人一人が輝けるようになることがこのスタジオのコンセプトです。
                         </p>
 
@@ -413,22 +436,22 @@ onMounted(() => {
 
                     <div class="
                         heading-outer
-                        flex justify-center
-                        lg:block
-                        lg:mb-6
+                        w-48 h-16
+                        mb-12 mx-auto
+                        border-silver-2
                         ">
                         <div class="
                             heading
-                            bg-white
-                            w-44 py-1 mb-4
-                            border-4 border-slate-500
-                            text-center text-slate-500 font-bold
+                            bg-black
+                            w-full h-full
+                            text-center content-center font-bold
                             ">
                             <h1 class="
-                                text-3xl
+                                text-3xl text-silver
                                 ">Schedule</h1>
                             <p class="
                                 text
+                                text-silver
                                 -mt-2
                                 ">レッスン日程</p>
                         </div>
@@ -459,21 +482,22 @@ onMounted(() => {
 
                     <div class="
                         heading-outer
-                        flex justify-center
+                        w-48 h-16
+                        mb-12 mx-auto
+                        border-silver-2
                         ">
                         <div class="
                             heading
-                            bg-white
-                            w-44 py-1 mb-4
-                            border-4 border-slate-500
-                            text-center text-slate-500 font-bold
-                            lg:mb-0
+                            bg-black
+                            w-full h-full
+                            text-center content-center font-bold
                             ">
                             <h1 class="
-                                text-3xl
+                                text-3xl text-silver
                                 ">Access</h1>
                             <p class="
                                 text
+                                text-silver
                                 -mt-2
                                 ">アクセス</p>
                         </div>
@@ -481,9 +505,8 @@ onMounted(() => {
 
                     <iframe class="
                         map
-                        my-6
                         w-full
-                        lg:w-11/12
+                        lg:w-11/12 my-6
                         "
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.810517090736!2d137.762090174159!3d34.73517028136524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ae09e16812de9%3A0xbc6b88d77fda8033!2z6Z-z5qW95aSp5Zu944O75rWc5p2-5biC6YeO5bqXIOmfs-alveOBruiyuOOBl-ODrOODs-OCv-ODq-OCueOCv-OCuOOCqg!5e0!3m2!1sja!2sjp!4v1706926293431!5m2!1sja!2sjp"
                         width="1000" height="562.5" style="border:0;" allowfullscreen="" loading="lazy"
@@ -495,7 +518,7 @@ onMounted(() => {
                         text-white
                         px-6
                         ">
-                        会場：<a class="link text-slate-500 underline" href="#" target="_blank">音楽天国 浜松市野店</a><br>
+                        会場：<a class="link text-silver underline" href="#" target="_blank">音楽天国 浜松市野店</a><br>
                         住所：〒435-0052 <br><span style="margin-left: 50px;">静岡県浜松市中央区天王町１９８２−３</span>
                     </p>
 
@@ -509,18 +532,25 @@ onMounted(() => {
                 ">
                 <div class="
                     button-outer
-                    flex justify-evenly
+                    w-60 h-16
+                    my-40
+                    mx-auto
+                    border-silver-1
                     ">
                     <Link :href="route('price.index')" class="
                         button-large
-                        border-slate-600 border-2
-                        py-5 px-16
+                        text-center
+                        bg-black
+                        w-full h-full
+                        flex items-center justify-center
                         hover:bg-white transition
                         ">
-                        <p class="
-                            ">レッスン料金はこちら</p>
-                    </Link>
+                        <span class="
+                            text-silver
+                            font-semibold
+                            ">レッスン料金はこちら</span></Link>
                 </div>
+
             </div>
 
             <div id="contact-wrapper" class="
@@ -531,49 +561,57 @@ onMounted(() => {
 
                 <div class="
                     inner
-                    py-16
-                    border-slate-600 border-y
+                    border-silver-1
+                    px-0
                     ">
 
                     <div class="
-                        heading-outer
-                        flex justify-center
+                        bg-black
+                        py-20
                         ">
+
                         <div class="
-                            heading
-                            bg-white
-                            w-44 py-1 mb-4
-                            border-4 border-slate-500
-                            text-center text-slate-500 font-bold
+                            heading-outer
+                            w-48 h-16
+                            mx-auto
+                            border-silver-2
                             ">
-                            <h1 class="
-                                text-3xl
-                                ">Contact</h1>
-                            <p class="
-                                text
-                                -mt-2
-                                ">お問い合わせ</p>
+                            <div class="
+                                heading
+                                bg-black
+                                w-full h-full
+                                text-center content-center font-bold
+                                ">
+                                <h1 class="
+                                    text-3xl text-silver
+                                    ">Contact</h1>
+                                <p class="
+                                    text
+                                    text-silver
+                                    -mt-2
+                                    ">お問い合わせ</p>
+                            </div>
                         </div>
+
+                        <p class="
+                            text
+                            text-white
+                            my-6
+                            px-6
+                            text-center
+                            ">
+                            お問い合わせやお依頼は、お気軽に以下の公式ラインよりご連絡ください。<br>
+                            返信まで1週間程度お待ちください。
+                        </p>
+
+                        <a href="#" target="_blank" class="
+                            line-icon
+                            flex
+                            justify-center
+                            ">
+                            <img src="/images/line-icon.svg" alt="">
+                        </a>
                     </div>
-
-                    <p class="
-                        text
-                        text-white
-                        my-6
-                        px-6
-                        text-center
-                        ">
-                        お問い合わせやお依頼は、お気軽に以下の公式ラインよりご連絡ください。<br>
-                        返信まで1週間程度お待ちください。
-                    </p>
-
-                    <a href="#" target="_blank" class="
-                        line-icon
-                        flex
-                        justify-center
-                        ">
-                        <img src="/images/line-icon.svg" alt="">
-                    </a>
 
                 </div>
             </div>

@@ -35,23 +35,22 @@ import Footer from '../Footer.vue';
 
                     <div class="
                         heading-outer
-                        flex justify-center
-                        lg:block
-                        lg:mb-6
+                        w-48 h-16
+                        mb-12 mx-auto
+                        border-silver-2
                         ">
                         <div class="
                             heading
-                            bg-white
-                            w-44 py-1 mb-4
-                            border-4 border-slate-500
-                            text-center text-slate-500 font-bold
-                            lg:mb-0
+                            bg-black
+                            w-full h-full
+                            text-center content-center font-bold
                             ">
                             <h1 class="
-                                text-3xl
+                                text-3xl text-silver
                                 ">Price</h1>
                             <p class="
                                 text
+                                text-silver
                                 -mt-2
                                 ">レッスン料金</p>
                         </div>

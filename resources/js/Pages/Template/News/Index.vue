@@ -18,7 +18,6 @@ defineProps({
         main-wrapper
         h-screen
         bg-black
-        text-slate-500
         ">
 
         <div class="
@@ -39,64 +38,75 @@ defineProps({
                     <div class="
                         news-wrapper
                         px-2 py-4
-                        lg:px-16 lg:pt-32 lg:mb-28
+                        lg:px-16 lg:pt-24 lg:mb-28
                         ">
                         <div class="
                             inner
-                            lg:py-8 lg:px-16
-                            lg:border lg:border-slate-500
+                            lg:border-silver-1
                             ">
 
                             <div class="
-                                heading-outer
-                                flex justify-center
+                                bg-black
+                                lg:px-16 py-20
                                 ">
+
                                 <div class="
-                                    heading
-                                    bg-white
-                                    w-44 py-1 mb-4
-                                    border-4 border-slate-500
-                                    text-center text-slate-500 font-bold
+                                    heading-outer
+                                    w-48 h-16
+                                    mb-12 mx-auto
+                                    border-silver-2
                                     ">
-                                    <h1 class="
-                                        text-3xl
-                                        ">News</h1>
-                                    <p class="
-                                        text
-                                        -mt-2
-                                        ">お知らせ一覧</p>
-                                </div>
-                            </div>
-
-                            <div class="
-                                list
-                                py-2
-                                ">
-
-                                <div v-for="n in news" class="
-                                    item
-                                    border-s-2 border-slate-500
-                                    ps-2 ms-1 mb-4
-                                    lg:mb-6
-                                    ">
-                                    <div v-if="n.status === 'public'" class="
-                                        lg:flex
+                                    <div class="
+                                        heading
+                                        bg-black
+                                        w-full h-full
+                                        text-center content-center font-bold
                                         ">
+                                        <h1 class="
+                                            text-3xl text-silver
+                                            ">News</h1>
                                         <p class="
-                                            date
-                                            lg:content-center
-                                            ">{{ new Date(n.public_date).toLocaleDateString('sv-SE') }}</p>
-                                        <Link :href="route('news.detail', n)" class="
                                             text
-                                            text-lg font-semibold
-                                            underline
-                                            lg:ms-8
-                                            ">{{ n.title }}</Link>
+                                            text-silver
+                                            -mt-2
+                                            ">お知らせ一覧</p>
                                     </div>
                                 </div>
 
-                            </div>
+                                <div class="
+                                    list
+                                    py-2
+                                    ">
 
+                                    <div v-for="n in news" class="
+                                        item
+                                        border-silver-1
+                                        p-0 mb-6
+                                        ">
+
+                                        <div v-if="n.status === 'public'" class="
+                                            lg:flex
+                                            ps-2 ms-0.5
+                                            bg-black
+                                            ">
+
+                                            <p class="
+                                                date
+                                                lg:content-center
+                                                text-silver
+                                                ">{{ new Date(n.public_date).toLocaleDateString('sv-SE') }}</p>
+
+                                            <Link :href="route('news.detail', n)" class="
+                                                text
+                                                text-lg font-semibold text-silver
+                                                underline
+                                                lg:ms-8
+                                                ">{{ n.title }}</Link>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

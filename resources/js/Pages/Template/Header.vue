@@ -1,6 +1,7 @@
 <script setup>
 import { Head, Link, usePage } from '@inertiajs/vue3';
 import { computed } from 'vue';
+import Button from '../../Components/Button.vue';
 
 const toggleHamburger = () => {
     const bars =document.getElementById('bars');
@@ -58,56 +59,55 @@ const isTopRoute = computed(() => {
                 ">
 
                 <div v-if="!isTopRoute" class="
-                    text-slate-500
                     h-full
                     content-center
                     ">
                     <Link :href="route('top')" class="
                         gnavi-item link
+                        text-silver font-semibold
                         mx-4
-                        underline
                         ">トップ</Link>
                     <Link :href="route('news.index')" class="
                         gnavi-item link
+                        text-silver font-semibold
                         mx-4
-                        underline
                         ">お知らせ一覧</Link>
                 </div>
 
                 <div v-if="isTopRoute" class="
-                    text-slate-500
                     h-full
                     content-center
                     ">
                     <a href="#news-wrapper" class="
                         gnavi-item link
+                        text-silver font-semibold
                         mx-4
-                        underline
                         ">お知らせ</a>
                     <a href="#career-wrapper" class="
                         gnavi-item link
+                        text-silver font-semibold
                         mx-2
-                        underline
                         ">講師</a>
                     <a href="#concept-wrapper" class="
                         gnavi-item link
+                        text-silver font-semibold
                         mx-2
-                        underline
                         ">コンセプト</a>
                     <a href="#schedule-wrapper" class="
                         gnavi-item link
+                        text-silver font-semibold
                         mx-2
                         underline
                         ">レッスン</a>
                     <a href="#access-wrapper" class="
                         gnavi-item link
+                        text-silver font-semibold
                         mx-2
-                        underline
                         ">アクセス</a>
                     <a href="#contact-wrapper" class="
                         gnavi-item link
+                        text-silver font-semibold
                         mx-2
-                        underline
                         ">お問い合わせ</a>
                 </div>
             </div>
@@ -139,53 +139,53 @@ const isTopRoute = computed(() => {
                 flex justify-center
                 my-4
                 ">
-                <Link :href="route('top')" class="
-                    w-40 py-4 mx-8
-                    text-white text-center border
-                    ">トップ</Link>
-                <Link :href="route('news.index')" class="
-                    w-40 py-4 mx-8
-                    text-white text-center border
-                    ">お知らせ一覧</Link>
+                <Button
+                    :isLink="true"
+                    :href="route('top')"
+                    :title="`トップ`"/>
+                <Button
+                    :isLink="true"
+                    :href="route('news.index')"
+                    :title="`お知らせ一覧`"/>
             </div>
             <div v-if="isTopRoute" class="
                 flex justify-center
                 my-4
                 ">
-                <a class="
-                    w-40 py-4 mx-8
-                    text-white text-center border
-                    " href="#news-wrapper">お知らせ</a>
-                <a class="
-                    w-40 py-4 mx-8
-                    text-white text-center border
-                    " href="#career-wrapper">講師</a>
+                <Button
+                    :isLink="false"
+                    :href="`#news-wrapper`"
+                    :title="`お知らせ`"/>
+                <Button
+                    :isLink="false"
+                    :href="`#career-wrapper`"
+                    :title="`講師`"/>
             </div>
             <div v-if="isTopRoute" class="
                 flex justify-center
                 my-4
                 ">
-                <a class="
-                    w-40 py-4 mx-8
-                    text-white text-center border
-                    " href="#concept-wrapper">コンセプト</a>
-                <a class="
-                    w-40 py-4 mx-8
-                    text-white text-center border
-                    " href="#schedule-wrapper">レッスン</a>
+                <Button
+                    :isLink="false"
+                    :href="`#concept-wrapper`"
+                    :title="`コンセプト`"/>
+                <Button
+                    :isLink="false"
+                    :href="`#schedule-wrapper`"
+                    :title="`レッスン`"/>
             </div>
             <div v-if="isTopRoute" class="
                 flex justify-center
                 my-4
                 ">
-                <a class="
-                    w-40 py-4 mx-8
-                    text-white text-center border
-                    " href="#access-wrapper">アクセス</a>
-                <a class="
-                    w-40 py-4 mx-8
-                    text-white text-center border
-                    " href="#contact-wrapper">お問い合わせ</a>
+                <Button
+                    :isLink="false"
+                    :href="`#access-wrapper`"
+                    :title="`アクセス`"/>
+                <Button
+                    :isLink="false"
+                    :href="`#contact-wrapper`"
+                    :title="`お問い合わせ`"/>
             </div>
         </div>
     </header>

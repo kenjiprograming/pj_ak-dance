@@ -36,64 +36,71 @@ marked.setOptions({ renderer })
         main-wrapper
         h-screen
         bg-black
-        text-slate-500
         ">
 
-        <div class="contents-wrapper">
+        <div class="
+            contents-wrapper
+            ">
 
             <div id="news-detail-wrapper" class="
                 news-detail-wrapper
                 py-10 px-2
                 lg:max-w-7xl lg:mx-auto
-                lg:px-16 lg:pt-16 lg:mb-28
+                lg:px-16 lg:mb-28
                 ">
 
                 <div class="
                     inner
-                    border-t border-s border-slate-500
-                    p-2
-                    lg:p-10
+                    border-silver-1
+                    pe-0 pb-0
                     ">
 
                     <div class="
-                        detail-heading-outer
-                        mb-6
+                        p-10
+                        bg-black
                         ">
+
                         <div class="
-                            heading
+                            detail-heading-outer
+                            mb-6
                             ">
-                            <h1 class="
-                                text-4xl
-                                font-extrabold
-                                ">{{ news.title }}</h1>
+                            <div class="
+                                heading
+                                ">
+                                <h1 class="
+                                    text-4xl
+                                    font-extrabold
+                                    text-silver
+                                    ">{{ news.title }}</h1>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="
-                        detail-date-outer
-                        flex
-                        flex-row-reverse
-                        mb-6
-                        ">
-                        <div class="
-                            text
-                            ">{{  new Date(news.public_date).toLocaleDateString('sv-SE')  }}</div>
-                    </div>
-
-                    <div class="content-outer">
 
                         <div class="
-                            content-inner
-                            mb-8
+                            detail-date-outer
+                            flex
+                            flex-row-reverse
+                            mb-6
                             ">
-
-                            <div v-html="marked.parse(news.body)" class="
+                            <div class="
                                 text
-                                "></div>
+                                text-silver
+                                ">{{  new Date(news.public_date).toLocaleDateString('sv-SE')  }}</div>
                         </div>
 
-                    </div>
+                        <div class="content-outer">
 
+                            <div class="
+                                content-inner
+                                mb-8
+                                ">
+
+                                <div v-html="marked.parse(news.body)" class="
+                                    text
+                                    text-silver
+                                    "></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="
@@ -102,21 +109,27 @@ marked.setOptions({ renderer })
                     mt-20
                     justify-center
                     ">
-                    <Link :href="route('news.index')" class="
-                        button-medium
-                        text-slate-500
-                        border-2
-                        border-slate-500
-                        py-3 px-8
-                        w-30
-                        hover:bg-white
+                    <div class="
+                        w-60 h-16
+                        mx-auto
+                        border-silver-1
                         ">
-                        <p>一覧へ戻る</p>
-                    </Link>
+                        <Link :href="route('news.index')" class="
+                            button-medium
+                            text-center
+                            bg-black
+                            w-full h-full
+                            flex items-center justify-center
+                            hover:bg-white transition
+                            ">
+                            <span class="
+                                text-silver
+                                font-semibold
+                                ">一覧へ戻る</span>
+                        </Link>
+                    </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 
