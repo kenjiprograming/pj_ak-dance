@@ -3,6 +3,7 @@ import { computed, ref } from 'vue';
 import { Head, Link } from '@inertiajs/vue3';
 import Header from './Header.vue';
 import Footer from './Footer.vue';
+import { onMounted } from 'vue';
 
 defineProps({
     news: Array,
@@ -35,6 +36,13 @@ const getEra = () => {
 }
 
 const era = getEra()
+
+onMounted(() => {
+    const script = document.createElement('script')
+    script.src = 'https://www.tiktok.com/embed.js'
+    script.async = true
+    document.body.appendChild(script)
+})
 
 </script>
 
@@ -308,11 +316,43 @@ const era = getEra()
                 movie-wrapper
                 ">
                 <div class="list">
-                    <div class="item">
-                        <!-- <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@_aika_0121/video/7238874983752043777" data-video-id="7238874983752043777" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@_aika_0121" href="https://www.tiktok.com/@_aika_0121?refer=embed">@_aika_0121</a> Just Relax😮‍💨 @Dexter Carr choreography⭐️ <a title="la" target="_blank" href="https://www.tiktok.com/tag/la?refer=embed">#la</a> <a title="laダンス留学" target="_blank" href="https://www.tiktok.com/tag/la%E3%83%80%E3%83%B3%E3%82%B9%E7%95%99%E5%AD%A6?refer=embed">#laダンス留学</a> <a title="justrelax" target="_blank" href="https://www.tiktok.com/tag/justrelax?refer=embed">#justrelax</a> <a title="lolabrooke" target="_blank" href="https://www.tiktok.com/tag/lolabrooke?refer=embed">#lolabrooke</a> <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a> <a title="02" target="_blank" href="https://www.tiktok.com/tag/02?refer=embed">#02</a> <a title="dancer" target="_blank" href="https://www.tiktok.com/tag/dancer?refer=embed">#dancer</a> <a title="playgroundla" target="_blank" href="https://www.tiktok.com/tag/playgroundla?refer=embed">#playgroundla</a> <a target="_blank" title="♬ original sound - Dexter Carr" href="https://www.tiktok.com/music/original-sound-7237944492421040938?refer=embed">♬ original sound - Dexter Carr</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script> -->
+                    <div class="
+                        item
+                        bg-white
+                        ">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@_aika_0121/video/7238874983752043777" data-video-id="7238874983752043777" style="max-width: 605px;min-width: 325px;" >
+                            <section>
+                                <a target="_blank" title="@_aika_0121" href="https://www.tiktok.com/@_aika_0121?refer=embed">@_aika_0121</a>
+                                Just Relax😮‍💨 @Dexter Carr choreography⭐️
+                                <a title="la" target="_blank" href="https://www.tiktok.com/tag/la?refer=embed">#la</a>
+                                <a title="laダンス留学" target="_blank" href="https://www.tiktok.com/tag/la%E3%83%80%E3%83%B3%E3%82%B9%E7%95%99%E5%AD%A6?refer=embed">#laダンス留学</a>
+                                <a title="justrelax" target="_blank" href="https://www.tiktok.com/tag/justrelax?refer=embed">#justrelax</a>
+                                <a title="lolabrooke" target="_blank" href="https://www.tiktok.com/tag/lolabrooke?refer=embed">#lolabrooke</a>
+                                <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a>
+                                <a title="02" target="_blank" href="https://www.tiktok.com/tag/02?refer=embed">#02</a>
+                                <a title="dancer" target="_blank" href="https://www.tiktok.com/tag/dancer?refer=embed">#dancer</a>
+                                <a title="playgroundla" target="_blank" href="https://www.tiktok.com/tag/playgroundla?refer=embed">#playgroundla</a>
+                                <a target="_blank" title="♬ original sound - Dexter Carr" href="https://www.tiktok.com/music/original-sound-7237944492421040938?refer=embed">♬ original sound - Dexter Carr</a>
+                            </section>
+                        </blockquote>
                     </div>
-                    <div class="item">
-                        <!-- <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@_aika_0121/video/7235002863796129026" data-video-id="7235002863796129026" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@_aika_0121" href="https://www.tiktok.com/@_aika_0121?refer=embed">@_aika_0121</a> Everyone&#39;s favorite snatched from the front❤️‍🔥<a title="aika" target="_blank" href="https://www.tiktok.com/tag/aika?refer=embed">#aika</a><a title="la" target="_blank" href="https://www.tiktok.com/tag/la?refer=embed">#la</a><a title="laダンス留学" target="_blank" href="https://www.tiktok.com/tag/la%E3%83%80%E3%83%B3%E3%82%B9%E7%95%99%E5%AD%A6?refer=embed">#laダンス留学</a> <a title="playgroundla" target="_blank" href="https://www.tiktok.com/tag/playgroundla?refer=embed">#playgroundla</a> <a title="snatched" target="_blank" href="https://www.tiktok.com/tag/snatched?refer=embed">#snatched</a><a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a> <a target="_blank" title="♬ オリジナル楽曲  - AIKA" href="https://www.tiktok.com/music/オリジナル楽曲-AIKA-7235002923002989314?refer=embed">♬ オリジナル楽曲  - AIKA</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script> -->
+                    <div class="
+                        item
+                        bg-white
+                        ">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@_aika_0121/video/7235002863796129026" data-video-id="7235002863796129026" style="max-width: 605px;min-width: 325px;" >
+                            <section>
+                                <a target="_blank" title="@_aika_0121" href="https://www.tiktok.com/@_aika_0121?refer=embed">@_aika_0121</a>
+                                Everyone&#39;s favorite snatched from the front❤️‍🔥
+                                <a title="aika" target="_blank" href="https://www.tiktok.com/tag/aika?refer=embed">#aika</a>
+                                <a title="la" target="_blank" href="https://www.tiktok.com/tag/la?refer=embed">#la</a>
+                                <a title="laダンス留学" target="_blank" href="https://www.tiktok.com/tag/la%E3%83%80%E3%83%B3%E3%82%B9%E7%95%99%E5%AD%A6?refer=embed">#laダンス留学</a>
+                                <a title="playgroundla" target="_blank" href="https://www.tiktok.com/tag/playgroundla?refer=embed">#playgroundla</a>
+                                <a title="snatched" target="_blank" href="https://www.tiktok.com/tag/snatched?refer=embed">#snatched</a>
+                                <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a>
+                                <a target="_blank" title="♬ オリジナル楽曲  - AIKA" href="https://www.tiktok.com/music/オリジナル楽曲-AIKA-7235002923002989314?refer=embed">♬ オリジナル楽曲  - AIKA</a>
+                            </section>
+                        </blockquote>
                     </div>
                 </div>
             </div>
