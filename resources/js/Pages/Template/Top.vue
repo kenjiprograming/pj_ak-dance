@@ -60,8 +60,15 @@ onMounted(() => {
         <div class="mainvisual-wrapper">
             <video autoplay muted playsinline class="
                 w-full h-auto
+                max-lg:hidden
                 ">
                 <source src="/media/main-pc.mp4" type="video/mp4" />
+            </video>
+            <video autoplay muted playsinline class="
+                w-full h-auto
+                lg:hidden
+                ">
+                <source src="/media/main-sp.mp4" type="video/mp4" />
             </video>
         </div>
 
