@@ -179,10 +179,11 @@ onMounted(() => {
                     </div>
                     <div class="
                         shindenzu-sp
+                        my-auto
                         lg:hidden
                         ">
                         <img src="/images/shindenzu-red-sp.png" alt="" class="
-                            w-10
+                            w-14
                             ">
                     </div>
 
@@ -217,7 +218,7 @@ onMounted(() => {
 
                     <div class="
                         shindenzu
-                        lg:w-16 max-lg:w-10
+                        lg:w-16 max-lg:w-14
                         ">
                     </div>
                 </div>
@@ -237,7 +238,7 @@ onMounted(() => {
 
                     <div class="
                         shindenzu
-                        lg:w-16 max-lg:w-10
+                        lg:w-16 max-lg:w-14
                         ">
                     </div>
 
@@ -277,10 +278,11 @@ onMounted(() => {
                     </div>
                     <div class="
                         shindenzu-sp
+                        my-auto
                         lg:hidden
                         ">
                         <img src="/images/shindenzu-silver-sp.png" alt="" class="
-                            w-10
+                            w-14
                             ">
                     </div>
 
