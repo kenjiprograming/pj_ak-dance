@@ -34,11 +34,13 @@ const isTopRoute = computed(() => {
 
             <Link :href="route('top')" class="
                 max-lg:hidden
+                ms-2
                 ">
                 <img src="/images/icon.svg" alt="">
             </Link>
             <Link :href="route('top')" class="
                 lg:hidden
+                ms-2
                 ">
                 <img src="/images/icon-sp.svg" alt="">
             </Link>
@@ -47,11 +49,6 @@ const isTopRoute = computed(() => {
                 max-lg:hidden
                 fixed left-1/2 transform -translate-x-1/2
                 "><img src="/images/logo.svg" alt="">
-            </Link>
-            <Link :href="route('top')" class="
-                lg:hidden
-                fixed left-1/2 transform -translate-x-1/2
-                "><img src="/images/logo-sp.svg" alt="">
             </Link>
 
             <div class="

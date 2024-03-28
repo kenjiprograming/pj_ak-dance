@@ -5,13 +5,17 @@
 @tailwind utilities;
 
 @layer components {
+    .text-silver-shadow {
+        @apply bg-gradient-to-br from-gray-600 via-slate-300 to-slate-600 bg-clip-text text-transparent;
+        -webkit-text-stroke: 0.5px black;
+    }
     .text-silver {
-        @apply bg-gradient-to-br from-gray-500 via-slate-200 to-slate-500 bg-clip-text text-transparent
+        @apply bg-gradient-to-br from-gray-600 via-slate-300 to-slate-600 bg-clip-text text-transparent
     }
     .border-silver-1 {
-        @apply bg-gradient-to-br from-gray-500 via-slate-200 to-slate-500 p-0.5
+        @apply bg-gradient-to-br from-gray-600 via-slate-300 to-slate-600 p-0.5
     }
     .border-silver-2 {
-        @apply bg-gradient-to-br from-gray-500 via-slate-200 to-slate-500 p-1
+        @apply bg-gradient-to-br from-gray-600 via-slate-300 to-slate-600 p-1
     }
 }

@@ -27,7 +27,7 @@ defineProps({
 
             <div id="news-under-wrapper" class="
                 news-under-wrapper
-                py-10 px-2
+                px-2
                 lg:max-w-7xl lg:mx-auto
                 lg:px-16 lg:mb-28
                 ">

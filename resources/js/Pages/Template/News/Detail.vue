@@ -34,7 +34,6 @@ marked.setOptions({ renderer })
 
     <div class="
         main-wrapper
-        h-screen
         bg-black
         ">
 
@@ -46,7 +45,7 @@ marked.setOptions({ renderer })
                 news-detail-wrapper
                 py-10 px-2
                 lg:max-w-7xl lg:mx-auto
-                lg:px-16 lg:mb-28
+                lg:px-16
                 ">
 
                 <div class="
