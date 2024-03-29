@@ -82,56 +82,64 @@ marked.setOptions({ renderer })
 
                 <div id="news-detail-wrapper" class="
                     news-detail-wrapper
-                    py-10 px-2 mb-40
+                    py-10 px-2
                     mx-auto
                     w-96
                     ">
 
                     <div class="inner
-                        border-t
-                        border-s
-                        border-slate-500
-                        p-2
+                        border-silver-1
+                        pe-0 pb-0
                         ">
 
                         <div class="
-                            detail-heading-outer
-                            mb-6
+                            p-10
+                            bg-black
                             ">
+
                             <div class="
-                                heading
+                                detail-heading-outer
+                                mb-6
                                 ">
-                                <h1 class="
-                                    text-4xl
-                                    font-extrabold
-                                    ">{{ news.title }}</h1>
+                                <div class="
+                                    heading
+                                    ">
+                                    <h1 class="
+                                        text-4xl
+                                        font-extrabold
+                                        text-slate-300
+                                        ">{{ news.title }}</h1>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="
-                            detail-date-outer
-                            flex
-                            flex-row-reverse
-                            mb-6
-                            ">
-                            <div class="
-                                text
-                                ">{{ new Date(news.public_date).toLocaleDateString('sv-SE')  }}</div>
-                        </div>
-
-                        <div class="content-outer">
 
                             <div class="
-                                content-inner
-                                mb-8
+                                detail-date-outer
+                                flex
+                                flex-row-reverse
+                                mb-6
                                 ">
-
-                                <div v-html="marked.parse(news.body)" class="
+                                <div class="
                                     text
-                                    "></div>
+                                    text-silver
+                                    ">{{ new Date(news.public_date).toLocaleDateString('sv-SE')  }}</div>
                             </div>
 
+                            <div class="content-outer">
+
+                                <div class="
+                                    content-inner
+                                    mb-8
+                                    ">
+
+                                    <div v-html="marked.parse(news.body)" class="
+                                        text
+                                        text-slate-300
+                                        "></div>
+                                </div>
+
+                            </div>
                         </div>
+
 
                     </div>
 
@@ -142,60 +150,69 @@ marked.setOptions({ renderer })
                     w-60
                     mx-auto
                     border-b-2
-                    ">PCでの表示（途中）</div>
+                    ">PCでの表示</div>
 
                 <div id="news-detail-wrapper" class="
                     news-detail-wrapper
                     py-10 px-2
                     lg:max-w-7xl lg:mx-auto
-                    lg:px-16 lg:pt-16 lg:pb-40
+                    lg:px-16
                     ">
 
                     <div class="
                         inner
-                        border-t border-s border-slate-500
-                        p-2
-                        lg:p-10
+                        border-silver-1
+                        pe-0 pb-0
                         ">
 
                         <div class="
-                            detail-heading-outer
-                            mb-6
+                            p-10
+                            bg-black
                             ">
+
                             <div class="
-                                heading
+                                detail-heading-outer
+                                mb-6
                                 ">
-                                <h1 class="
-                                    text-4xl
-                                    font-extrabold
-                                    ">{{ news.title }}</h1>
+                                <div class="
+                                    heading
+                                    ">
+                                    <h1 class="
+                                        text-4xl
+                                        font-extrabold
+                                        text-slate-300
+                                        ">{{ news.title }}</h1>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="
-                            detail-date-outer
-                            flex
-                            flex-row-reverse
-                            mb-6
-                            ">
-                            <div class="
-                                text
-                                ">{{ new Date(news.public_date).toLocaleDateString('sv-SE')  }}</div>
-                        </div>
-
-                        <div class="content-outer">
 
                             <div class="
-                                content-inner
-                                mb-8
+                                detail-date-outer
+                                flex
+                                flex-row-reverse
+                                mb-6
                                 ">
-
-                                <div v-html="marked.parse(news.body)" class="
+                                <div class="
                                     text
-                                    "></div>
+                                    text-silver
+                                    ">{{ new Date(news.public_date).toLocaleDateString('sv-SE')  }}</div>
                             </div>
 
+                            <div class="content-outer">
+
+                                <div class="
+                                    content-inner
+                                    mb-8
+                                    ">
+
+                                    <div v-html="marked.parse(news.body)" class="
+                                        text
+                                        text-slate-300
+                                        "></div>
+                                </div>
+
+                            </div>
                         </div>
+
 
                     </div>
 

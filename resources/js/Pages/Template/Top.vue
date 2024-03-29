@@ -80,6 +80,7 @@ onMounted(() => {
         ">
         <img src="/images/loading.svg" alt="loading" class="
             mx-auto
+            my-auto
             px-10
             ">
 
