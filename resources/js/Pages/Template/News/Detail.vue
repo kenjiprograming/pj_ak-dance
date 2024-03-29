@@ -34,6 +34,7 @@ marked.setOptions({ renderer })
 
     <div class="
         main-wrapper
+        h-screen
         bg-black
         ">
 
