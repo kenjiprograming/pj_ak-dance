@@ -23,6 +23,7 @@ const isTopRoute = computed(() => {
     <header class="
         sticky
         top-0
+        z-10
         ">
 
         <div class="

@@ -452,7 +452,7 @@ onMounted(() => {
                         text-white font-Lato
                         px-6
                         ">
-                        会場：<a class="link text-silver font-semibold" href="#" target="_blank">音楽天国 浜松市野店</a><br>
+                        会場：<a class="link text-silver font-semibold" href="https://maps.app.goo.gl/zHAKd5rhSmZgddEw7" target="_blank">音楽天国 浜松市野店</a><br>
                         住所：〒435-0052 <br><span style="margin-left: 50px;">静岡県浜松市中央区天王町１９８２−３</span>
                     </p>
 

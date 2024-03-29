@@ -70,7 +70,7 @@ marked.setOptions({ renderer })
                                 <h1 class="
                                     text-4xl
                                     font-extrabold
-                                    text-silver
+                                    text-slate-300
                                     ">{{ news.title }}</h1>
                             </div>
                         </div>
@@ -96,7 +96,7 @@ marked.setOptions({ renderer })
 
                                 <div v-html="marked.parse(news.body)" class="
                                     text
-                                    text-silver
+                                    text-slate-300
                                     "></div>
                             </div>
                         </div>
