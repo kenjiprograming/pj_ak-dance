@@ -171,19 +171,10 @@ onMounted(() => {
 
                     <div class="
                         shindenzu
-                        max-lg:hidden
+                        max-lg:my-auto
                         ">
-                        <img src="/images/shindenzu-red.png" alt="" class="
+                        <img src="/images/shindenzu-red.svg" alt="" class="
                             w-16
-                            ">
-                    </div>
-                    <div class="
-                        shindenzu-sp
-                        my-auto
-                        lg:hidden
-                        ">
-                        <img src="/images/shindenzu-red-sp.png" alt="" class="
-                            w-14
                             ">
                     </div>
 
@@ -195,30 +186,35 @@ onMounted(() => {
                             bigText="Instructor"
                             smallText="講師" />
 
-                        <h2 class="
-                            pc-h2
-                            my-6
-                            text-center text-3xl text-red-600 font-SedgwickAve
-                            lg:my-6
-                            ">AIKA</h2>
-
-                        <p class="
-                            text
-                            text-md leading-7 text-white font-Lato
-                            lg:text-center lg:leading-8
+                        <div class="
+                            bg-[url('/images/profile.svg')] bg-contain bg-no-repeat bg-center
                             ">
-                            5歳からダンスを始め、今年でダンス歴{{era}}年目。<br class="">
-                            ヒップホップ、ガールズ、ブレイク、ロック、ジャズ、ハウス、ポップなど、あらゆるダンスジャンルを習得。<br class="">
-                            EXPG元特待生。EXILEや3代目JSBをはじめ、数々のBIGアーティスト達のバックダンサーを務める。<br class="">
-                            TV出演やPV出演歴あり。コンテスト等で数々の賞を受賞。<br class="">
-                            常に学びと共にダンスで生きる為、韓国やアメリカなど各国へダンス留学などもしながら、<br class="">
-                            日々自分の限界を越える為のスキル向上を努めている。
-                        </p>
+
+                            <h2 class="
+                                pc-h2
+                                my-6
+                                text-center text-3xl text-red-600 font-SedgwickAve
+                                lg:my-6
+                                ">AIKA</h2>
+
+                            <p class="
+                                text
+                                text-md leading-7 text-white font-Lato
+                                lg:text-center lg:leading-8
+                                ">
+                                5歳からダンスを始め、今年でダンス歴{{era}}年目。<br class="">
+                                ヒップホップ、ガールズ、ブレイク、ロック、ジャズ、ハウス、ポップなど、あらゆるダンスジャンルを習得。<br class="">
+                                EXPG元特待生。EXILEや3代目JSBをはじめ、数々のBIGアーティスト達のバックダンサーを務める。<br class="">
+                                TV出演やPV出演歴あり。コンテスト等で数々の賞を受賞。<br class="">
+                                常に学びと共にダンスで生きる為、韓国やアメリカなど各国へダンス留学などもしながら、<br class="">
+                                日々自分の限界を越える為のスキル向上を努めている。
+                            </p>
+                        </div>
                     </div>
 
                     <div class="
                         shindenzu
-                        lg:w-16 max-lg:w-14
+                        w-16
                         ">
                     </div>
                 </div>
@@ -238,7 +234,7 @@ onMounted(() => {
 
                     <div class="
                         shindenzu
-                        lg:w-16 max-lg:w-14
+                        w-16
                         ">
                     </div>
 
@@ -270,19 +266,10 @@ onMounted(() => {
 
                     <div class="
                         shindenzu
-                        max-lg:hidden
+                        max-lg:my-auto
                         ">
-                        <img src="/images/shindenzu-silver.png" alt="" class="
+                        <img src="/images/shindenzu-silver.svg" alt="" class="
                             w-16
-                            ">
-                    </div>
-                    <div class="
-                        shindenzu-sp
-                        my-auto
-                        lg:hidden
-                        ">
-                        <img src="/images/shindenzu-silver-sp.png" alt="" class="
-                            w-14
                             ">
                     </div>
 
