@@ -36,11 +36,6 @@ const getEra = () => {
 const era = getEra()
 
 onMounted(() => {
-    const script = document.createElement('script')
-    script.src = 'https://www.tiktok.com/embed.js'
-    script.async = true
-    document.body.appendChild(script)
-
     const images = document.querySelectorAll('img')
     const videos = document.querySelectorAll('video')
 
@@ -60,6 +55,12 @@ onMounted(() => {
     Promise.all(mediaPromises).then(() => {
         setTimeout(() => {
             isLoading.value = false
+
+            const script = document.createElement('script')
+            script.src = 'https://www.tiktok.com/embed.js'
+            script.async = true
+            document.body.appendChild(script)
+
         }, 2000)
     })
 })
