@@ -17,7 +17,7 @@ defineProps({
 
     <div class="
         main-wrapper
-        h-screen
+        min-h-screen
         bg-black
         ">
 
