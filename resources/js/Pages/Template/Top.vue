@@ -112,7 +112,7 @@ onMounted(() => {
 
             <div id="news-wrapper" class="
                 news-wrapper
-                px-2 py-4
+                px-2 pt-24
                 lg:max-w-7xl lg:mx-auto
                 lg:px-16 lg:pt-32 lg:mb-28
                 ">
@@ -190,10 +190,14 @@ onMounted(() => {
                 </div>
             </div>
 
+            <img src="/images/shindenzu-red-90.svg" alt="" class="
+                lg:hidden
+                mx-auto
+                ">
 
             <div id="career-wrapper" class="
                 career-wrapper
-                my-20
+                pt-24 px-8
                 lg:px-16 lg:pt-32 lg:mt-28 lg:mb-0
                 lg:max-w-7xl mx-auto
                 ">
@@ -205,6 +209,7 @@ onMounted(() => {
                     <div class="
                         shindenzu
                         max-lg:my-auto
+                        max-lg:hidden
                         ">
                         <img src="/images/shindenzu-red.svg" alt="" class="
                             w-16
@@ -247,6 +252,7 @@ onMounted(() => {
 
                     <div class="
                         shindenzu
+                        max-lg:hidden
                         w-16
                         ">
                     </div>
@@ -255,7 +261,7 @@ onMounted(() => {
 
             <div id="concept-wrapper" class="
                 concept-wrapper
-                my-20
+                my-20 pt-24 px-8
                 lg:px-16 lg:pt-32 lg:mb-60 lg:mt-0
                 lg:max-w-7xl lg:mx-auto
                 ">
@@ -267,6 +273,7 @@ onMounted(() => {
 
                     <div class="
                         shindenzu
+                        max-lg:hidden
                         w-16
                         ">
                     </div>
@@ -300,6 +307,7 @@ onMounted(() => {
                     <div class="
                         shindenzu
                         max-lg:my-auto
+                        max-lg:hidden
                         ">
                         <img src="/images/shindenzu-silver.svg" alt="" class="
                             w-16
@@ -394,9 +402,14 @@ onMounted(() => {
 
             </div>
 
+            <img src="/images/shindenzu-silver-90.svg" alt="" class="
+                lg:hidden
+                mx-auto
+                ">
+
             <div id="schedule-wrapper" class="
                 schedule-wrapper
-                my-20
+                my-20 pt-24
                 lg:pt-32 lg:mb-28
                 ">
                 <div class="
@@ -424,7 +437,7 @@ onMounted(() => {
 
             <div id="access-wrapper" class="
                 access-wrapper
-                my-20
+                my-20 pt-24
                 lg:pt-32
                 ">
 
