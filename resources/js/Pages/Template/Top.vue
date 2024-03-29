@@ -10,25 +10,22 @@ defineProps({
     news: Array,
 })
 
+const isLoading = ref(true)
+
 const getEra = () => {
-    // 誕生日を設定します（YYYY-MM-DD形式で設定します）
     var birthday = '2007-01-21';
 
-    // 誕生日の年月日を取得します
     var birthDate = new Date(birthday);
     var birthYear = birthDate.getFullYear();
     var birthMonth = birthDate.getMonth();
     var birthDay = birthDate.getDate();
 
-    // 今日の日付を取得します
     var today = new Date();
     var currentYear = today.getFullYear();
     var currentMonth = today.getMonth();
     var currentDay = today.getDate();
 
-    // 年齢を計算します
     var age = currentYear - birthYear;
-    // 誕生日が今年より後ならば、1年引きます
     if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDay < birthDay)) {
         age--;
     }
@@ -43,16 +40,51 @@ onMounted(() => {
     script.src = 'https://www.tiktok.com/embed.js'
     script.async = true
     document.body.appendChild(script)
+
+    const images = document.querySelectorAll('img')
+    const videos = document.querySelectorAll('video')
+
+    const mediaElements = [...images, ...videos];
+
+    const mediaPromises = mediaElements.map(element => {
+        return new Promise(resolve => {
+        if (element.complete || element.readyState === 4) {
+            resolve()
+        } else {
+            element.onload = resolve;
+            element.onerror = resolve;
+        }
+        });
+    });
+
+    Promise.all(mediaPromises).then(() => {
+        setTimeout(() => {
+            isLoading.value = false
+        }, 2000)
+    })
 })
 
 </script>
 
-<template>
+<template >
     <Head title="トップ" />
 
-    <Header />
+    <Header v-if="!isLoading" />
 
-    <div class="
+    <div v-if="isLoading" class="
+        loading-screen
+        bg-black
+        h-screen
+        content-center
+        ">
+        <img src="/images/loading.svg" alt="loading" class="
+            mx-auto
+            px-10
+            ">
+
+    </div>
+
+    <div v-else class="
         main-wrapper
         bg-black
         ">
@@ -483,7 +515,7 @@ onMounted(() => {
                             返信まで1週間程度お待ちください。
                         </p>
 
-                        <a href="#" target="_blank" class="
+                        <a href="https://lin.ee/8CXw0bF" target="_blank" class="
                             line-icon
                             flex
                             justify-center
@@ -498,6 +530,6 @@ onMounted(() => {
         </div>
     </div>
 
-    <Footer />
+    <Footer v-if="!isLoading" />
 
 </template>
