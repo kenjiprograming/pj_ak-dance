@@ -32,11 +32,11 @@ Route::get('/price', [TopController::class, 'price'])
     ->name('price.index');
 
 Route::get('/admin/feature', [FeatureController::class, 'index'])
-    ->middleware(['auth', 'verified'])
+    ->middleware(['auth', 'verified', 'basicauth'])
     ->name('admin.feature.index');
 
 Route::resource('/admin/news', NewsController::class)
-    ->middleware(['auth', 'verified'])
+    ->middleware(['auth', 'verified', 'basicauth'])
     ->names([
         'index' => 'admin.news.index',
         'create' => 'admin.news.create',
