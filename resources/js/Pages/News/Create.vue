@@ -20,19 +20,19 @@ const form = useForm({
 const masks = ref({ modelValue: 'YYYY-MM-DD' });
 
 const submit = () => {
-    form.post(route("news.store"));
+    form.post(route("admin.news.store"));
 };
 </script>
 
 <template>
-    <Head title="お知らせ詳細" />
+    <Head title="お知らせ新規作成" />
 
     <AuthenticatedLayout>
         <template #header>
             <div class="flex justify-between">
-                <Link :href="route('news.index')" class="text-slate-50 font-semibold text-xl">お知らせ機能</Link>
+                <Link :href="route('admin.news.index')" class="text-slate-50 font-semibold text-xl">お知らせ機能</Link>
                 <div class="text-slate-50 font-semibold text-2xl">お知らせ詳細</div>
-                <Link :href="route('news.create')"
+                <Link :href="route('admin.news.create')"
                     class="bg-slate-50 py-1 px-3 font-semibold rounded-xl hover:bg-slate-500 hover:text-white transition"
                     >新規作成</Link>
             </div>
@@ -117,7 +117,7 @@ const submit = () => {
                                 <div v-if="form.errors.body" class="text-sm text-red-600">
                                     {{ form.errors.body }}
                                 </div>
-                                <textarea class="h-full w-96" placeholder="## 小見出し１" v-model="form.body"></textarea>
+                                <textarea class="h-full w-96" placeholder="# 見出し１&#13;&#13;## 見出し２&#13;&#13;### 見出し３&#13;&#13;**太字**&#13;&#13;*イタリック*&#13;&#13;通常" v-model="form.body"></textarea>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@ const submit = () => {
                             <button class="
                                 bg-blue-100 text-blue-900 py-3 px-5 me-6 border font-semibold hover:bg-blue-900 hover:text-white transition
                                 ">登録・更新</button>
-                            <Link :href="route('news.index')" class="
+                            <Link :href="route('admin.news.index')" class="
                                 bg-slate-100 text-slate-900 py-3 px-4 me-6 border font-semibold hover:bg-slate-900 hover:text-slate-100 transition
                                 ">戻る</Link>
                         </div>

@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Russo+One&family=Sedgwick+Ave&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .text-silver-shadow {
+        @apply bg-gradient-to-br from-gray-600 via-slate-300 to-slate-600 bg-clip-text text-transparent;
+        -webkit-text-stroke: 0.5px black;
+    }
+    .text-silver {
+        @apply bg-gradient-to-br from-gray-600 via-slate-300 to-slate-600 bg-clip-text text-transparent
+    }
+    .border-silver-1 {
+        @apply bg-gradient-to-br from-gray-600 via-slate-300 to-slate-600 p-0.5
+    }
+    .border-silver-2 {
+        @apply bg-gradient-to-br from-gray-600 via-slate-300 to-slate-600 p-1
+    }
+}

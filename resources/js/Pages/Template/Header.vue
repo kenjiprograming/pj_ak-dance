@@ -1,4 +1,7 @@
 <script setup>
+import { Head, Link, usePage } from '@inertiajs/vue3';
+import { computed } from 'vue';
+import Button from '../../Components/Button.vue';
 
 const toggleHamburger = () => {
     const bars =document.getElementById('bars');
@@ -9,48 +12,106 @@ const toggleHamburger = () => {
     xmark.classList.toggle('hidden')
     menu.classList.toggle('hidden')
 }
+
+const page = usePage()
+const isTopRoute = computed(() => {
+    return page.url === '/'
+})
 </script>
 
 <template>
     <header class="
-        max-sm:sticky
-        max-sm:top-0
+        sticky
+        top-0
+        z-10
         ">
+
         <div class="
             bg-black
             h-auto
             flex
             justify-between
             ">
-            <a href="./index.html" class="
-                max-sm:hidden
+
+            <Link :href="route('top')" class="
+                max-lg:hidden
+                ms-2
                 ">
                 <img src="/images/icon.svg" alt="">
-            </a>
-            <a href="./index.html" class="
-                sm:hidden
+            </Link>
+            <Link :href="route('top')" class="
+                lg:hidden
+                ms-2
                 ">
                 <img src="/images/icon-sp.svg" alt="">
-            </a>
+            </Link>
 
-            <a href="./index.html" class="max-sm:hidden">
-                <img src="/images/logo.svg" alt="">
-            </a>
-            <a href="./index.html" class="sm:hidden">
-                <img src="/images/logo-sp.svg" alt="">
-            </a>
+            <Link :href="route('top')" class="
+                max-lg:hidden
+                fixed left-1/2 transform -translate-x-1/2
+                "><img src="/images/logo.svg" alt="">
+            </Link>
 
-            <div class="max-sm:hidden">
-                <a href="./index.html#news-wrapper" class="gnavi-item link">お知らせ</a>
-                <a href="./index.html#career-wrapper" class="gnavi-item link">講師</a>
-                <a href="./index.html#concept-wrapper" class="gnavi-item link">コンセプト</a>
-                <a href="./index.html#schedule-wrapper" class="gnavi-item link">レッスン</a>
-                <a href="./index.html#access-wrapper" class="gnavi-item link">アクセス</a>
-                <a href="./index.html#contact-wrapper" class="gnavi-item link">お問い合わせ</a>
+            <div class="
+                max-lg:hidden
+                ">
+
+                <div v-if="!isTopRoute" class="
+                    h-full
+                    content-center
+                    ">
+                    <Link :href="route('top')" class="
+                        gnavi-item link
+                        text-silver font-semibold
+                        mx-4
+                        ">トップ</Link>
+                    <Link :href="route('news.index')" class="
+                        gnavi-item link
+                        text-silver font-semibold
+                        mx-4
+                        ">お知らせ一覧</Link>
+                </div>
+
+                <div v-if="isTopRoute" class="
+                    h-full
+                    content-center
+                    ">
+                    <a href="#news-wrapper" class="
+                        gnavi-item link
+                        text-silver font-semibold
+                        mx-4
+                        ">お知らせ</a>
+                    <a href="#career-wrapper" class="
+                        gnavi-item link
+                        text-silver font-semibold
+                        mx-2
+                        ">講師</a>
+                    <a href="#concept-wrapper" class="
+                        gnavi-item link
+                        text-silver font-semibold
+                        mx-2
+                        ">コンセプト</a>
+                    <a href="#schedule-wrapper" class="
+                        gnavi-item link
+                        text-silver font-semibold
+                        mx-2
+                        underline
+                        ">レッスン</a>
+                    <a href="#access-wrapper" class="
+                        gnavi-item link
+                        text-silver font-semibold
+                        mx-2
+                        ">アクセス</a>
+                    <a href="#contact-wrapper" class="
+                        gnavi-item link
+                        text-silver font-semibold
+                        mx-2
+                        ">お問い合わせ</a>
+                </div>
             </div>
 
             <div id="hamburger" @click="toggleHamburger()" class="
-                sm:hidden
+                lg:hidden
                 me-2
                 w-7
                 ">
@@ -62,7 +123,6 @@ const toggleHamburger = () => {
                     hidden
                     h-full
                     ">
-
             </div>
 
         </div>
@@ -73,17 +133,57 @@ const toggleHamburger = () => {
             py-4
             h-auto
             ">
-            <div class="flex justify-center my-4">
-                <a class="w-40 py-4 mx-8 text-white text-center border" href="./index.html#news-wrapper">お知らせ</a>
-                <a class="w-40 py-4 mx-8 text-white text-center border" href="./index.html#career-wrapper">講師</a>
+            <div v-if="!isTopRoute" class="
+                flex justify-center
+                my-4
+                ">
+                <Button
+                    :isLink="true"
+                    :href="route('top')"
+                    :title="`トップ`"/>
+                <Button
+                    :isLink="true"
+                    :href="route('news.index')"
+                    :title="`お知らせ一覧`"/>
             </div>
-            <div class="flex justify-center my-4">
-                <a class="w-40 py-4 mx-8 text-white text-center border" href="./index.html#concept-wrapper">コンセプト</a>
-                <a class="w-40 py-4 mx-8 text-white text-center border" href="./index.html#schedule-wrapper">レッスン</a>
+            <div v-if="isTopRoute" class="
+                flex justify-center
+                my-4
+                ">
+                <Button
+                    :isLink="false"
+                    :href="`#news-wrapper`"
+                    :title="`お知らせ`"/>
+                <Button
+                    :isLink="false"
+                    :href="`#career-wrapper`"
+                    :title="`講師`"/>
             </div>
-            <div class="flex justify-center my-4">
-                <a class="w-40 py-4 mx-8 text-white text-center border" href="./index.html#access-wrapper">アクセス</a>
-                <a class="w-40 py-4 mx-8 text-white text-center border" href="./index.html#contact-wrapper">お問い合わせ</a>
+            <div v-if="isTopRoute" class="
+                flex justify-center
+                my-4
+                ">
+                <Button
+                    :isLink="false"
+                    :href="`#concept-wrapper`"
+                    :title="`コンセプト`"/>
+                <Button
+                    :isLink="false"
+                    :href="`#schedule-wrapper`"
+                    :title="`レッスン`"/>
+            </div>
+            <div v-if="isTopRoute" class="
+                flex justify-center
+                my-4
+                ">
+                <Button
+                    :isLink="false"
+                    :href="`#access-wrapper`"
+                    :title="`アクセス`"/>
+                <Button
+                    :isLink="false"
+                    :href="`#contact-wrapper`"
+                    :title="`お問い合わせ`"/>
             </div>
         </div>
     </header>

@@ -20,14 +20,19 @@ const showingNavigationDropdown = ref(false);
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
-                                    <img :src="'/images/icon.svg'" alt="">
+                                <Link :href="route('admin.feature.index')">
+                                    <img :src="'/images/icon.svg'" alt="" class="
+                                        max-sm:hidden
+                                        ">
+                                    <img :src="'/images/icon-sp.svg'" alt="" class="
+                                        sm:hidden
+                                        ">
                                 </Link>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('feature.index')" :active="route().current('feature')">
+                                <NavLink :href="route('admin.feature.index')">
                                     機能一覧
                                 </NavLink>
                             </div>
@@ -108,11 +113,6 @@ const showingNavigationDropdown = ref(false);
                     :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
                     class="sm:hidden"
                 >
-                    <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
-                        </ResponsiveNavLink>
-                    </div>
 
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">
@@ -124,7 +124,6 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <ResponsiveNavLink :href="route('profile.edit')"> Profile </ResponsiveNavLink>
                             <ResponsiveNavLink :href="route('logout')" method="post" as="button">
                                 Log Out
                             </ResponsiveNavLink>

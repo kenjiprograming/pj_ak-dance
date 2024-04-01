@@ -3,6 +3,7 @@
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\TopController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -18,37 +19,33 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/', [TopController::class, 'index'])
+    ->name('top');
 
-Route::get('/top', function () {
-    return Inertia::render('Template/Top');
-})->name('top');
+Route::get('/news', [TopController::class, 'news'])
+    ->name('news.index');
 
-Route::get('/news', function () {
-    return Inertia::render('Template/NewsList');
-})->name('news.list');
+Route::get('/news/{news}', [TopController::class, 'newsDetail'])
+    ->name('news.detail');
 
-Route::get('/news/{news}', function () {
-    return Inertia::render('Template/NewsDetail');
-})->name('news.detail');
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/price', [TopController::class, 'price'])
+    ->name('price.index');
 
 Route::get('/admin/feature', [FeatureController::class, 'index'])
-    ->middleware(['auth', 'verified'])
-    ->name('feature.index');
+    ->middleware(['auth', 'verified', 'basicauth'])
+    ->name('admin.feature.index');
 
 Route::resource('/admin/news', NewsController::class)
-    ->middleware(['auth', 'verified']);
+    ->middleware(['auth', 'verified', 'basicauth'])
+    ->names([
+        'index' => 'admin.news.index',
+        'create' => 'admin.news.create',
+        'store' => 'admin.news.store',
+        'show' => 'admin.news.show',
+        'edit' => 'admin.news.edit',
+        'update' => 'admin.news.update',
+        'destroy' => 'admin.news.destroy',
+    ]);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

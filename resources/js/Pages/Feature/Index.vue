@@ -9,7 +9,16 @@ import { Head, Link } from '@inertiajs/vue3';
     <AuthenticatedLayout>
         <template #header>
             <div class="flex justify-between">
-                <div class="text-slate-50 font-semibold text-xl">機能一覧</div>
+                <div class="
+                    text-slate-50 font-semibold text-xl
+                    ">機能一覧</div>
+                <a :href="route('top')" target="_blank" class="
+                    text-black font-semibold leading-7
+                    bg-white
+                    rounded
+                    px-2
+                    hover:bg-slate-100 transition
+                    ">公開サイトを見る</a>
             </div>
         </template>
 
@@ -17,7 +26,7 @@ import { Head, Link } from '@inertiajs/vue3';
             <div class="py-2">
                 <div class="max-w-xl px-8 mx-auto">
                     <div class="bg-white py-6 rounded-lg overflow-hidden shadow-lg transition hover:bg-slate-100">
-                        <Link :href="route('news.index')" class="block font-semibold text-center">お知らせ機能</Link>
+                        <Link :href="route('admin.news.index')" class="block font-semibold text-center">お知らせ機能</Link>
                     </div>
                 </div>
             </div>
