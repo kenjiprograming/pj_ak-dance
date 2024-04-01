@@ -1,16 +1,12 @@
 <script setup>
-import { computed, ref } from 'vue';
 import { Head, Link } from '@inertiajs/vue3';
 import Header from './Header.vue';
 import Footer from './Footer.vue';
 import Heading from '../../Components/Heading.vue';
-import { onMounted } from 'vue';
 
 defineProps({
     news: Array,
 })
-
-const isLoading = ref(true)
 
 const getEra = () => {
     var birthday = '2007-01-21';
@@ -35,45 +31,27 @@ const getEra = () => {
 
 const era = getEra()
 
-onMounted(() => {
-    const images = document.querySelectorAll('img')
-    const videos = document.querySelectorAll('video')
+const handleLoadedData = () => {
+    console.log('動画が読み込まれました。');
+    document.getElementById('loading-screen').classList.add('hidden')
+    document.getElementById('main-screen').classList.remove('hidden')
+    document.getElementById('header').classList.remove('hidden')
+    document.getElementById('footer').classList.remove('hidden')
+};
 
-    const mediaElements = [...images, ...videos];
-
-    const mediaPromises = mediaElements.map(element => {
-        return new Promise(resolve => {
-        if (element.complete || element.readyState === 4) {
-            resolve()
-        } else {
-            element.onload = resolve;
-            element.onerror = resolve;
-        }
-        });
-    });
-
-    Promise.all(mediaPromises).then(() => {
-        setTimeout(() => {
-            isLoading.value = false
-
-            const script = document.createElement('script')
-            script.src = 'https://www.tiktok.com/embed.js'
-            script.async = true
-            document.body.appendChild(script)
-
-        }, 2000)
-    })
-})
+const script = document.createElement('script')
+script.src = 'https://www.tiktok.com/embed.js'
+script.async = true
+document.body.appendChild(script)
 
 </script>
 
 <template >
     <Head title="トップ" />
 
-    <Header v-if="!isLoading" />
+    <Header id="header" class="hidden" />
 
-    <div v-if="isLoading" class="
-        loading-screen
+    <div id="loading-screen" class="
         bg-black
         h-screen
         content-center
@@ -86,19 +64,20 @@ onMounted(() => {
 
     </div>
 
-    <div v-else class="
+    <div id="main-screen" class="
         main-wrapper
         bg-black
+        hidden
         ">
 
         <div class="mainvisual-wrapper">
-            <video autoplay muted playsinline class="
+            <video id="main-video" autoplay muted playsinline @canplay="handleLoadedData" class="
                 w-full h-auto
                 max-lg:hidden
                 ">
                 <source src="/media/main-pc.mp4" type="video/mp4" />
             </video>
-            <video autoplay muted playsinline class="
+            <video autoplay muted playsinline @canplay="handleLoadedData" class="
                 w-full h-auto
                 lg:hidden
                 ">
@@ -545,6 +524,6 @@ onMounted(() => {
         </div>
     </div>
 
-    <Footer v-if="!isLoading" />
+    <Footer id="footer" class="hidden" />
 
 </template>
