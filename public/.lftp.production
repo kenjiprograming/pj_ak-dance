@@ -1,0 +1,4 @@
+open kenji-first
+cd public_html/ak-dance.site/ak-dance/public/build
+mirror -Repcn --parallel=10 ./build . --dry-run
+exit
