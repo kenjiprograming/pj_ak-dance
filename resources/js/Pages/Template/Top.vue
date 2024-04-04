@@ -33,10 +33,10 @@ const era = getEra()
 
 const handleLoadedData = () => {
     console.log('動画が読み込まれました。');
-    document.getElementById('loading-screen').classList.add('hidden')
-    document.getElementById('main-screen').classList.remove('hidden')
-    document.getElementById('header').classList.remove('hidden')
-    document.getElementById('footer').classList.remove('hidden')
+    document.getElementById('loading-image-pc').classList.add('hidden')
+    document.getElementById('main-video-pc').classList.remove('hidden')
+    document.getElementById('loading-image-sp').classList.add('hidden')
+    document.getElementById('main-video-sp').classList.remove('hidden')
 };
 
 const script = document.createElement('script')
@@ -49,40 +49,40 @@ document.body.appendChild(script)
 <template >
     <Head title="トップ" />
 
-    <Header id="header" class="hidden" />
+    <Header />
 
-    <div id="loading-screen" class="
-        bg-black
-        h-screen
-        content-center
-        ">
-        <img src="/images/loading.svg" alt="loading" class="
-            mx-auto
-            my-auto
-            px-10
-            ">
-
-    </div>
-
-    <div id="main-screen" class="
+    <div class="
         main-wrapper
         bg-black
-        hidden
         ">
 
-        <div class="mainvisual-wrapper">
-            <video id="main-video" autoplay muted playsinline @canplay="handleLoadedData" class="
+        <div class="
+            mainvisual-wrapper
+            max-lg:hidden
+            ">
+            <video id="main-video-pc" autoplay muted playsinline @canplaythrough="handleLoadedData" class="
                 w-full h-auto
-                max-lg:hidden
+                hidden
                 ">
                 <source src="/media/main-pc.mp4" type="video/mp4" />
             </video>
-            <video autoplay muted playsinline @canplay="handleLoadedData" class="
+            <img id="loading-image-pc" src="/images/loading-pc.svg" alt="" class="
                 w-full h-auto
-                lg:hidden
+                ">
+        </div>
+        <div class="
+            mainvisual-wrapper
+            lg:hidden
+            ">
+            <video id="main-video-sp" autoplay muted playsinline @canplaythrough="handleLoadedData" class="
+                w-full h-auto
+                hidden
                 ">
                 <source src="/media/main-sp.mp4" type="video/mp4" />
             </video>
+            <img id="loading-image-sp" src="/images/loading-sp.svg" alt="" class="
+                w-full h-auto
+                ">
         </div>
 
         <div class="
@@ -524,6 +524,5 @@ document.body.appendChild(script)
         </div>
     </div>
 
-    <Footer id="footer" class="hidden" />
-
+    <Footer />
 </template>
