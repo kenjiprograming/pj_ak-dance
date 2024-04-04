@@ -1,4 +1,8 @@
 open kenji-first
-cd public_html/ak-dance.site/ak-dance/public/build
+cd ~/public_html/ak-dance.site/ak-dance/public/build
 mirror -Repcn --parallel=10 ./build . --dry-run
+cd ~/public_html/ak-dance.site/ak-dance/public/images
+mirror -Repcn --parallel=10 ./images . --dry-run
+cd ~/public_html/ak-dance.site/ak-dance/public/media
+mirror -Repcn --parallel=10 ./media . --dry-run
 exit
