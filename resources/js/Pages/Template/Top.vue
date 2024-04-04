@@ -177,7 +177,7 @@ document.body.appendChild(script)
 
             <div id="career-wrapper" class="
                 career-wrapper
-                pt-24 px-8
+                pt-24 px-2
                 lg:px-16 lg:pt-32 lg:mt-28 lg:mb-0
                 lg:max-w-7xl mx-auto
                 ">
@@ -210,9 +210,8 @@ document.body.appendChild(script)
 
                             <h2 class="
                                 pc-h2
-                                my-6
+                                mt-6 mb-12
                                 text-center text-3xl text-red-600 font-SedgwickAve
-                                lg:my-6
                                 ">AIKA</h2>
 
                             <p class="
@@ -443,7 +442,8 @@ document.body.appendChild(script)
                     <p class="
                         text
                         text-white font-Lato
-                        px-6
+                        px-2
+                        lg:px-6
                         ">
                         会場：<a class="link text-silver font-semibold" href="https://maps.app.goo.gl/zHAKd5rhSmZgddEw7" target="_blank">音楽天国 浜松市野店</a><br>
                         住所：〒435-0052 <br><span style="margin-left: 50px;">静岡県浜松市中央区天王町１９８２−３</span>
