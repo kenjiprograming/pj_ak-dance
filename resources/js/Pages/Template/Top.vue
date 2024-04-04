@@ -74,7 +74,7 @@ document.body.appendChild(script)
             mainvisual-wrapper
             lg:hidden
             ">
-            <video id="main-video-sp" autoplay muted playsinline @canplaythrough="handleLoadedData" class="
+            <video id="main-video-sp" autoplay muted playsinline loop @canplaythrough="handleLoadedData" class="
                 w-full h-auto
                 hidden
                 ">
