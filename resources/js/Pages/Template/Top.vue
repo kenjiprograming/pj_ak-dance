@@ -278,7 +278,7 @@ document.body.appendChild(script)
                             そして、ダンスのスキルだけでなくダンサー向けの<br class="sp-br lg:hidden">
                             <span class="font-bold text-xl text-silver">&nbsp;”ファッションセンス”&nbsp;</span>や<br class="sp-br lg:hidden">
                             <span class="font-bold text-xl text-silver">&nbsp;”ヘアメイク”&nbsp;</span>も学びながら、<br class="sp-br">
-                            ダンスを生かして一人一人が輝けるようになることがこのスタジオのコンセプトです。
+                            ダンスを生かして一人一人が輝けるようになることがこのスクールのコンセプトです。
                         </p>
 
                     </div>
